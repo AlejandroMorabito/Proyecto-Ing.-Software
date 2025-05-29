@@ -162,7 +162,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hacer que esta foto se vea pixelada para fondo de un vidiojuego sin filtro naranja que se vea un poquito mas natural_0: 3732287288161518492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

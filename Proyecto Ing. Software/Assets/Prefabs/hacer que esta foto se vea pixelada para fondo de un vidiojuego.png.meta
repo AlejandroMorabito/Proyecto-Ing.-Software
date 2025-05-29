@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hacer que esta foto se vea pixelada para fondo de un vidiojuego_0: -8683915319367516677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
