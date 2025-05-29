@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a294fba569ea9da4eb92ec79b03b06e7
+guid: 7662fde781fdd1a41b5f4c554d70b3f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5987235601823564997
-    second: Captura de pantalla_29-5-2025_14351_copilot.cloud.microsoft_0
+      213: 2506736505162600029
+    second: 542ee67d-3f05-424a-8a69-b3f7c25d09c3 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura de pantalla_29-5-2025_14351_copilot.cloud.microsoft_0
+      name: 542ee67d-3f05-424a-8a69-b3f7c25d09c3 (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 771
-        height: 472
+        width: 1030
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c40441ee0fe61350800000000000000
-      internalID: 5987235601823564997
+      spriteID: d5e88b7f197b9c220800000000000000
+      internalID: 2506736505162600029
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Captura de pantalla_29-5-2025_14351_copilot.cloud.microsoft_0: 5987235601823564997
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
