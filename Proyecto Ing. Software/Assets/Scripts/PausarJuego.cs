@@ -12,26 +12,26 @@ public class PausarJuego : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-    }
+        }
         
-        if (juegoPausado)
-        {
-            Reanudar();
+            if (juegoPausado)
+            {
+                Reanudar();
 
-        }
-        else
-        {
-            Pausar();
-        }
+            }
+            else
+            {
+                Pausar();
+            }
     }
 
-    public void Reanudar()
+public void Reanudar()
         {
             menuPausa.SetActive(false);
             Time.timeScale = 1;
             juegoPausado = false;
         }
-    public void Pausar()
+public void Pausar()
         {
             menuPausa.SetActive(true);
             Time.timeScale = 0;
