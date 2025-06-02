@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Estado a reproducir: " + "Idle" + lastDirection);
             animator.SetBool("IsMoving", false);
             animator.Play("Idle" + lastDirection); // Reproducir la animación correcta
         }
