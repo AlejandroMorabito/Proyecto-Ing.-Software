@@ -6,71 +6,152 @@ using System.Collections.Generic;
 
 public class MemoryController : MonoBehaviour
 {
+    // [Asignar estos en el Inspector]
     public Image[] uiImages = new Image[36];
     public TextMeshProUGUI countdownText;
     public TextMeshProUGUI livesText;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI pointsText;
     public GameObject gameOverPanel;
     public GameObject winPanel;
+    public GameObject introCanvas; // Canvas introductorio
+    public GameObject juegoCanvas;
+    public Button startButton; // Botón para comenzar
+    public Button exitButton; // Nuevo botón para salir
 
-    private readonly Color color0 = new Color(0f, 42f/255f, 152f/255f);    // #002A98
-    private readonly Color color1 = new Color(47f/255f, 104f/255f, 255f/255f); // #2F68FF
-    private readonly Color wrongColor = new Color(1f, 0.2157f, 0.1843f);   // #FF372F (rojo error)
+    private readonly Color color0 = new Color(0f, 42f/255f, 152f/255f);
+    private readonly Color color1 = new Color(47f/255f, 104f/255f, 255f/255f);
+    private readonly Color wrongColor = new Color(1f, 0.2157f, 0.1843f);
 
     private List<int> imageValues = new List<int>();
     private List<int> correctIndices = new List<int>();
     private int lives = 3;
     private bool gameActive = false;
-
+    private int score = 0;
+    private int totalPoints = 0;
+    private Coroutine gameRoutine;
+    public PlayerController playerController; // Referencia al script de movimiento del jugador
+    
     void Start()
     {
-        InitializeColors();
-        StartCoroutine(StartGameRoutine());
+        // Configurar los botones
+        startButton.onClick.AddListener(StartGameFromIntro);
+        exitButton.onClick.AddListener(ExitGame);
+        
+        // Mostrar solo el canvas introductorio
+        introCanvas.SetActive(false);
+        juegoCanvas.SetActive(false);
+        gameOverPanel.SetActive(false);
+        winPanel.SetActive(false);
+        
+        // Ocultar elementos del juego
+        SetGameElementsActive(false);
     }
 
-    private void InitializeColors()
+    // Método para salir del juego
+    public void ExitGame()
     {
+        juegoCanvas.SetActive(false);
+        // Reactivar controles del jugador
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+        }
+
+    }
+
+    public void StartGameFromIntro()
+    {
+        // Ocultar intro y mostrar elementos del juego
+        introCanvas.SetActive(false);
+        juegoCanvas.SetActive(true);
+        SetGameElementsActive(true);
+        
+        // Iniciar juego
+        totalPoints = 0;
+        UpdatePointsUI();
+        StartNewGame();
+    }
+
+    private void SetGameElementsActive(bool active)
+    {
+        foreach(var img in uiImages)
+        {
+            if(img != null) img.gameObject.SetActive(active);
+        }
+        countdownText.gameObject.SetActive(active);
+        livesText.gameObject.SetActive(active);
+        pointsText.gameObject.SetActive(active);
+    }
+
+    public void StartNewGame()
+    {
+        if(gameRoutine != null) 
+        {
+            StopCoroutine(gameRoutine);
+        }
+
+        InitializeGameState();
+        gameRoutine = StartCoroutine(GameLoop());
+    }
+
+    private void InitializeGameState()
+    {
+        gameActive = false;
+        lives = 3;
+        score = 0;
         imageValues.Clear();
         correctIndices.Clear();
         
-        for (int i = 0; i < uiImages.Length; i++)
+        gameOverPanel.SetActive(false);
+        winPanel.SetActive(false);
+
+        foreach(var img in uiImages)
         {
-            if (uiImages[i] != null)
-            {
-                uiImages[i].color = color0;
-                imageValues.Add(0);
-            }
+            if(img != null) img.color = color0;
         }
+
+        for(int i = 0; i < uiImages.Length; i++)
+        {
+            imageValues.Add(0);
+        }
+
+        livesText.text = "Vidas: " + lives;
     }
 
-    private IEnumerator StartGameRoutine()
+    private void UpdatePointsUI()
     {
-        // Fase de memorización (6 cuadrados en color1)
+        pointsText.text = "Puntos: " + totalPoints;
+    }
+
+    private IEnumerator GameLoop()
+    {
         SetRandomHighlightedImages(6);
         countdownText.text = "Memoriza...";
         yield return new WaitForSeconds(5f);
 
-        // Vuelve todo a color0
-        foreach (int index in correctIndices)
+        foreach(int index in correctIndices)
         {
-            uiImages[index].color = color0;
-            imageValues[index] = 0;
+            if(uiImages[index] != null)
+            {
+                uiImages[index].color = color0;
+                imageValues[index] = 0;
+            }
         }
 
         countdownText.text = "";
-        livesText.text = "Vidas: " + lives;
         gameActive = true;
     }
 
     private void SetRandomHighlightedImages(int count)
     {
         List<int> availableIndices = new List<int>();
-        for (int i = 0; i < uiImages.Length; i++)
+        for(int i = 0; i < uiImages.Length; i++)
         {
-            if (uiImages[i] != null) availableIndices.Add(i);
+            if(uiImages[i] != null) availableIndices.Add(i);
         }
 
-        // Mezcla aleatoria
-        for (int i = 0; i < count; i++)
+        for(int i = 0; i < count; i++)
         {
             int randomIndex = Random.Range(i, availableIndices.Count);
             int temp = availableIndices[i];
@@ -84,56 +165,63 @@ public class MemoryController : MonoBehaviour
         }
     }
 
-    // Llamado desde el EventTrigger de cada Image (configura en el Inspector)
     public void OnSquareClicked(int index)
     {
-        if (!gameActive || imageValues[index] == 2) return;
+        if(!gameActive || imageValues[index] == 2) return;
 
-        if (correctIndices.Contains(index))
+        if(correctIndices.Contains(index))
         {
-            // Acierto
             uiImages[index].color = color1;
-            imageValues[index] = 2; // Marcado como acertado
-            CheckWinCondition();
+            imageValues[index] = 2;
+            score++;
+            
+            if(CheckWinCondition())
+            {
+                totalPoints++;
+                UpdatePointsUI();
+                StartCoroutine(EndGame(true));
+            }
         }
         else
         {
-            // Error
             uiImages[index].color = wrongColor;
             lives--;
             livesText.text = "Vidas: " + lives;
-            if (lives <= 0) GameOver();
+            
+            if(lives <= 0)
+            {
+                totalPoints = Mathf.Max(0, totalPoints - 1);
+                UpdatePointsUI();
+                StartCoroutine(EndGame(false));
+            }
         }
     }
 
-    private void CheckWinCondition()
+    private bool CheckWinCondition()
     {
-        foreach (int index in correctIndices)
+        foreach(int index in correctIndices)
         {
-            if (imageValues[index] != 2) return;
+            if(imageValues[index] != 2) return false;
         }
-        WinGame();
+        return true;
     }
 
-    private void GameOver()
+    private IEnumerator EndGame(bool won)
     {
         gameActive = false;
-        gameOverPanel.SetActive(true);
-    }
+        
+        if(won)
+        {
+            winPanel.SetActive(true);
+            resultText.text = "¡Ganaste! Puntos: +1\nTotal: " + totalPoints;
+        }
+        else
+        {
+            gameOverPanel.SetActive(true);
+            resultText.text = "Perdiste. Puntos: -1\nTotal: " + totalPoints;
+        }
 
-    private void WinGame()
-    {
-        gameActive = false;
-        winPanel.SetActive(true);
-    }
-
-    // Reiniciar el juego (llamar desde botón UI)
-    public void RestartGame()
-    {
-        InitializeColors();
-        gameOverPanel.SetActive(false);
-        winPanel.SetActive(false);
-        lives = 3;
-        StartCoroutine(StartGameRoutine());
+        yield return new WaitForSeconds(2f);
+        StartNewGame();
     }
 }
