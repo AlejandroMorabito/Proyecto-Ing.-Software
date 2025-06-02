@@ -1,0 +1,463 @@
+Unity Editor version:    6000.0.49f1 (840e0a9776d9)
+Branch:                  6000.0/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.4.1 (Build 24E263)
+Darwin version:          24.4.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/adrianpinzon/Desktop/Poyecto ISW/Sala recreativa
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59475
+-job-worker-count
+3
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: /Users/adrianpinzon/Desktop/Poyecto ISW/Sala recreativa
+/Users/adrianpinzon/Desktop/Poyecto ISW/Sala recreativa
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [140704463502272]  Target information:
+
+Player connection [140704463502272]  * "[IP] 10.81.7.7 [Port] 0 [Flags] 2 [Guid] 1861543803 [EditorId] 1861543803 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Eduardo-2.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [140704463502272] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [140704463502272] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 3
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 10.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.49f1 (840e0a9776d9)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/adrianpinzon/Desktop/Poyecto ISW/Sala recreativa/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Color LCD preferred device: Intel(R) Iris(TM) Plus Graphics 645 (low power)
+Metal devices available: 1
+0: Intel(R) Iris(TM) Plus Graphics 645 (low power)
+Using device Intel(R) Iris(TM) Plus Graphics 645 (low power)
+Initializing Metal device caps: Intel(R) Iris(TM) Plus Graphics 645
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56267
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.004141 seconds.
+- Loaded All Assemblies, in  1.043 seconds
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.758 seconds
+Domain Reload Profiling: 1802ms
+	BeginReloadAssembly (382ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (107ms)
+	RebuildNativeTypeToScriptingClass (35ms)
+	initialDomainReloadingComplete (110ms)
+	LoadAllAssembliesAndSetupDomain (409ms)
+		LoadAssemblies (381ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (401ms)
+			TypeCache.Refresh (396ms)
+				TypeCache.ScanAssembly (360ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (759ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (667ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (78ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (178ms)
+			ProcessInitializeOnLoadAttributes (302ms)
+			ProcessInitializeOnLoadMethodAttributes (100ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.737 seconds
+Refreshing native plugins compatible for Editor in 1.21 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.565 seconds
+Domain Reload Profiling: 3300ms
+	BeginReloadAssembly (261ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (66ms)
+	RebuildCommonClasses (77ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (156ms)
+	LoadAllAssembliesAndSetupDomain (1218ms)
+		LoadAssemblies (793ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (532ms)
+			TypeCache.Refresh (407ms)
+				TypeCache.ScanAssembly (371ms)
+			BuildScriptInfoCaches (101ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1566ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1344ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (327ms)
+			ProcessInitializeOnLoadAttributes (906ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launching external process: /Applications/Unity/Hub/Editor/6000.0.49f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.48 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4748 unused Assets / (0.9 MB). Loaded Objects now: 5236.
+Memory consumption went from 93.1 MB to 92.3 MB.
+Total: 15.340937 ms (FindLiveObjects: 1.104926 ms CreateObjectMapping: 0.805034 ms MarkObjects: 10.530273 ms  DeleteObjects: 2.899439 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 168364.206412 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Racket Normal.png
+  artifactKey: Guid(4c4e6c5d526044b4b83914d2f1ff7025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Racket Normal.png using Guid(4c4e6c5d526044b4b83914d2f1ff7025) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d9ccb5ff778fd476127ccfc7bc269ba') in 1.727698367 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Wood2 Base.png
+  artifactKey: Guid(16f80a67708e1474ea5fb7723fdd41de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Wood2 Base.png using Guid(16f80a67708e1474ea5fb7723fdd41de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37c4cfbb07c196bc5937def9cf765f72') in 0.338948799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Ball2.png
+  artifactKey: Guid(8c78f24f228a777429da838311597970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Ball2.png using Guid(8c78f24f228a777429da838311597970) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46452a3345a0ba1b1af4f541ce7232f3') in 0.123642074 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Racket Red Base.png
+  artifactKey: Guid(b48f01a90b47b5a44ac5fc709a3cfb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Racket Red Base.png using Guid(b48f01a90b47b5a44ac5fc709a3cfb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '26067c2cb5e704fb381793a2fe7fdf17') in 0.027588617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Ball2.mat
+  artifactKey: Guid(fcdd0a49cb82b874f9264db86d68f7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Ball2.mat using Guid(fcdd0a49cb82b874f9264db86d68f7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7b43baa46e3de3608b0b77587fce7c6') in 1.285669913 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Wood1.mat
+  artifactKey: Guid(b39fa384c9ed8ac41822a77a8ddfb1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Wood1.mat using Guid(b39fa384c9ed8ac41822a77a8ddfb1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4d574c157f852b28b07436bf938645c1') in 0.10584053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Wood2 Normal.png
+  artifactKey: Guid(46e090f3fa5a1294ca8a74374c531755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Wood2 Normal.png using Guid(46e090f3fa5a1294ca8a74374c531755) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d7f6ad4432412c8e32ee8d0321f3089') in 0.078062757 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Classic Black.mat
+  artifactKey: Guid(6ad992835c787fd47a0bdb1b2e96bf88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Classic Black.mat using Guid(6ad992835c787fd47a0bdb1b2e96bf88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb8e38f2050455bd782f1391d6fcac3b') in 0.083786668 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Ball1.png
+  artifactKey: Guid(1678316ecd9134e47ae9dc75cb37edbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat/Racket Tex/Ball1.png using Guid(1678316ecd9134e47ae9dc75cb37edbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '32b0e8d5559c7f93b74d2daea167bbe3') in 0.064207648 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.860935 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Prefab/Ball1.prefab
+  artifactKey: Guid(5b9d4251829af024daf056abe0961647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Prefab/Ball1.prefab using Guid(5b9d4251829af024daf056abe0961647) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd24cdc0d85039d44537c444ac1e892ee') in 0.103229438 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Prefab/ClassicRacket.prefab
+  artifactKey: Guid(de73661888cd0a646943971f9e3670f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Prefab/ClassicRacket.prefab using Guid(de73661888cd0a646943971f9e3670f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c71d73dab3225056d5ce2d16cc116ace') in 0.221594151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.216015 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Mesh/ClassicRacket.FBX
+  artifactKey: Guid(4d94d7373a0cf594fb78e8bf83c24173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Mesh/ClassicRacket.FBX using Guid(4d94d7373a0cf594fb78e8bf83c24173) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '641d4fd07940f0af7874e29f80c01d79') in 1.069067718 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 719.530758 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e9fbd3302bc4489e882dfb339a38ebd2') in 1.494192164 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 579.602932 seconds.
+  path: Assets/Gemini_Generated_Image_bo8r04bo8r04bo8r.jpg
+  artifactKey: Guid(d0fef6f14c29b4ba1bca74da3db736f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gemini_Generated_Image_bo8r04bo8r04bo8r.jpg using Guid(d0fef6f14c29b4ba1bca74da3db736f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2c13a9d657b00bbe6db1956bdb642b6d') in 0.550787728 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.290309 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '073a572de1c5124d528aa62e1bf7adc0') in 0.764239524 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.782637 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ddf4b272a3ef4ad77db66290359ba76') in 0.24939282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 1630.052981 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c798cb279145aadb98c5db72f037296a') in 0.813593678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.367657 seconds.
+  path: Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat
+  artifactKey: Guid(84d107dca96ba14449e6e4dd3f8ba199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrossLabs/Classic Ping-Pong Racket/Materials/Racket Mat using Guid(84d107dca96ba14449e6e4dd3f8ba199) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c8649ca2b854941064a735923982528a') in 0.006831683 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2140.391973 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a3611f25a2e5020115ceac623ba9755') in 0.598706985 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 323.919653 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/Sprite_Mode@4x.png
+  artifactKey: Guid(2223b0a570b66ee42b3e0a79f0789b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/Sprite_Mode@4x.png using Guid(2223b0a570b66ee42b3e0a79f0789b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7e00beb7561f2132cd34e0e10a6ed20') in 0.118396423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027833 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/Handles/ss_playhead.png
+  artifactKey: Guid(9ea72647c24be493ba6f15a9cd2a24ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/Handles/ss_playhead.png using Guid(9ea72647c24be493ba6f15a9cd2a24ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc6bc5ee871b8ca4cb8c466f454059b8') in 0.036407851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000083 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png
+  artifactKey: Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png using Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '31c79d6b543df1b69ad4318e2d625331') in 0.034831993 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Square.png
+  artifactKey: Guid(48e93eef0688c4a259cb0eddcd8661f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Square.png using Guid(48e93eef0688c4a259cb0eddcd8661f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f45265bc125f49d12ed3366a54527f6') in 0.394798345 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/SquareWithBorder.png
+  artifactKey: Guid(db750325989564987a34393247d883b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/SquareWithBorder.png using Guid(db750325989564987a34393247d883b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81dda8dc5ccdfcbd62c1453164802e79') in 0.094867637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/Handles/ss_leftrange.png
+  artifactKey: Guid(9417efc47083f4a1598c1966a6345cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/Handles/ss_leftrange.png using Guid(9417efc47083f4a1598c1966a6345cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a9a29f90f17a187335b780f865fd1b2d') in 0.071001112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/Handles/ss_rightrange.png
+  artifactKey: Guid(ee5df01235032491c8b180741ea820fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/Handles/ss_rightrange.png using Guid(ee5df01235032491c8b180741ea820fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fae2440c6d20d160b3bc9793fb6381c5') in 0.100297657 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 59852.058363 seconds.
+  path: Assets/Gemini_Generated_Image_bo8r04bo8r04bo8r-removebg-preview.png
+  artifactKey: Guid(b598c36330bd342c5a09454e9b08a553) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gemini_Generated_Image_bo8r04bo8r04bo8r-removebg-preview.png using Guid(b598c36330bd342c5a09454e9b08a553) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eaf943f443d3f01e4f80bdc65fa020f7') in 0.258693253 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.435715 seconds.
+  path: Assets/Background.prefab
+  artifactKey: Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Background.prefab using Guid(8bf3fc7caf79145c3937a2b7f153491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '16f36f32f26784d0306c9fbaf149563c') in 0.859217627 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.987507 seconds.
+  path: Assets/Gemini_Generated_Image_ehl70pehl70pehl7-removebg-preview.png
+  artifactKey: Guid(07f31be42b5974b88be8efd0775621e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gemini_Generated_Image_ehl70pehl70pehl7-removebg-preview.png using Guid(07f31be42b5974b88be8efd0775621e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '78584466b3982019b137b6f5ab35d7d5') in 0.041694221 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 458.926980 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/Sprite_Mode@4x.png
+  artifactKey: Guid(554a30a45860f494ca38586c54b7e5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/Sprite_Mode@4x.png using Guid(554a30a45860f494ca38586c54b7e5d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'efd678b30e24afb03d85404c789503b8') in 0.071760019 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.058396 seconds.
+  path: Packages/com.unity.2d.common/Path/Editor/Handles/TangentContinuousPro.png
+  artifactKey: Guid(25c4e987877a046bd994284ffeabc78b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.common/Path/Editor/Handles/TangentContinuousPro.png using Guid(25c4e987877a046bd994284ffeabc78b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fac4ae72008077102f3cd407c3f13e1f') in 0.065710209 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Packages/com.unity.2d.tilemap/Editor/Icons/Tilemap.ActiveTargetLayers.png
+  artifactKey: Guid(abbc28ff73b72b1438f893d41ca52fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.tilemap/Editor/Icons/Tilemap.ActiveTargetLayers.png using Guid(abbc28ff73b72b1438f893d41ca52fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e5e79ccbeaea44653d2fa708b3368e7') in 0.182732544 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Packages/com.unity.2d.tilemap/Editor/Icons/Tilemap.ActiveTargetLayers@4x.png
+  artifactKey: Guid(ce315ea6e6e86a740b10e02dda0d0e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.tilemap/Editor/Icons/Tilemap.ActiveTargetLayers@4x.png using Guid(ce315ea6e6e86a740b10e02dda0d0e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '812546d6962cb3c7a4ba6d9aa2139b18') in 0.029941776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Packages/com.unity.2d.common/Path/Editor/Handles/TangentLinearPro.png
+  artifactKey: Guid(5315c047999aa4d869298f6988dfeb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.common/Path/Editor/Handles/TangentLinearPro.png using Guid(5315c047999aa4d869298f6988dfeb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4be7728d3b557326a5dbacd95c529a62') in 0.0616984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
