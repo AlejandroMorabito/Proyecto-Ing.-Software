@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PrimeTween;
 
 public class CardsController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CardsController : MonoBehaviour
 
     Card firstSelected;
     Card secondSelected;
+
+    int matchCounts;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -85,6 +88,13 @@ public class CardsController : MonoBehaviour
         if(a.iconSprite == b.iconSprite)
         {
             // Matched
+            matchCounts++;
+            if (matchCounts >= spritePairs.Count / 2) 
+            {
+                PrimeTween.Sequence.Create()
+                    .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one * 1.2f, 0.2f, ease: PrimeTween.Ease.OutBack))
+                    .Chain(PrimeTween.Tween.Scale(gridTransform, Vector3.one * 1.2f, 0.1f));
+            }
         }
         else
         {
