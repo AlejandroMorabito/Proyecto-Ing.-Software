@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      netbeans-backwards_0: 7378739189282555854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

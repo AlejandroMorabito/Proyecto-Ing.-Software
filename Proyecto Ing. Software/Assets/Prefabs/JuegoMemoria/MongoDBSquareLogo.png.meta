@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MongoDBSquareLogo_0: -3266988965426690117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vscode-backwards_0: -1004398640505468460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PostgreSQL-backwards_0: 6290721263990485308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
