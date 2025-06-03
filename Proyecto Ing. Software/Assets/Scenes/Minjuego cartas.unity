@@ -292,6 +292,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Juego de Memoria v1
       objectReference: {fileID: 0}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: sprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -2372467631463751338, guid: a0cecfa2d01dc4f4c86208a5753a7549,
+        type: 3}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -1004398640505468460, guid: 3bdb866a6be9d1343af1193d62a9a0d1,
+        type: 3}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7378739189282555854, guid: b4b8bd75b6d959844b8ce439d603493a,
+        type: 3}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: -7072603257418609622, guid: dc6c8a12a8c2e29429779db27d5fb096,
+        type: 3}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 6290721263990485308, guid: df52202a030433144b91b0329734af65,
+        type: 3}
+    - target: {fileID: 415588853119299406, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: 'sprites.Array.data[5]'
+      value: 
+      objectReference: {fileID: -3266988965426690117, guid: 98bd4bc1b7225af458c3fec52201d8a8,
+        type: 3}
+    - target: {fileID: 1194939851072704102, guid: 7c7592fc9b6064f4993c4358b1347d10,
+        type: 3}
+      propertyPath: m_ConstraintCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6494581413261801642, guid: 7c7592fc9b6064f4993c4358b1347d10,
         type: 3}
       propertyPath: m_LocalPosition.x
