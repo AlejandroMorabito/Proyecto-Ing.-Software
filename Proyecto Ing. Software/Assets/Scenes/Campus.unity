@@ -33319,7 +33319,7 @@ MonoBehaviour:
   countdownText: {fileID: 1292300472}
   livesText: {fileID: 128157298}
   resultText: {fileID: 443401469}
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 1644070704}
   gameOverPanel: {fileID: 818262740}
   winPanel: {fileID: 2095501627}
   introCanvas: {fileID: 878832428}
