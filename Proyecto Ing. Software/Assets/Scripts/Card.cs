@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PrimeTween;
 
 public class Card : MonoBehaviour
 {
@@ -32,15 +33,27 @@ public class Card : MonoBehaviour
 
     public void Show()
     {
-        iconImage.sprite = iconSprite;
+        Tween.Rotation(transform, //the target
+            new Vector3(0f, 180f, 0f), //180 degree in y axis
+            0.2f); // in 2 seconds
+
+        Tween.Delay(0.1f, () => iconImage.sprite = iconSprite);
         isSelected = true;
     }
 
 
     public void Hide()
     {
-        iconImage.sprite = hiddenIconSprite;
-        isSelected = false;
+        Tween.Rotation(transform,
+            new Vector3(0f, 0f, 0f),
+            0.2f);
+
+        Tween.Delay(0.1f, () =>
+        {
+            iconImage.sprite = hiddenIconSprite;
+            isSelected = false;
+        });
+        
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
