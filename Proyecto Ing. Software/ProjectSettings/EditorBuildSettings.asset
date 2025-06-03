@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inicio.unity
     guid: c4bb8d9b5b3e54f45a6decb2ce8057e3
+  - enabled: 1
+    path: Assets/Scenes/Barra.unity
+    guid: 52354690a2e6e4760810991ae7b29047
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

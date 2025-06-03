@@ -4,6 +4,7 @@ public class ActivarCanvas : MonoBehaviour
 {
     public GameObject canvasUI;
     private bool jugadorDentro = false;
+    public int Estres = 0;
     public PlayerController playerController; // Referencia al script de movimiento del jugador
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,7 +25,11 @@ public class ActivarCanvas : MonoBehaviour
 
     private void Update()
     {
-        if (jugadorDentro && Input.GetKeyDown(KeyCode.E))
+        if (Estres == 100)
+        {
+            Debug.Log("Nivel de estres alto");
+        }
+        else if (jugadorDentro && Input.GetKeyDown(KeyCode.E))
         {
             bool canvasActivo = !canvasUI.activeSelf;
             canvasUI.SetActive(canvasActivo);
@@ -36,3 +41,7 @@ public class ActivarCanvas : MonoBehaviour
         }
     }
 }
+
+
+
+
