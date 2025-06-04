@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 73ac2c317ee034bb1bc0b1d3544f595d
+timeCreated: 1454667905
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Prefabs/Particles_Bounce.prefab
+  uploadId: 110214

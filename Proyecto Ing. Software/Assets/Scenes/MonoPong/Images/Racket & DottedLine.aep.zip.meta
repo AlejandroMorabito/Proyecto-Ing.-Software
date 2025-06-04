@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 638167be624624b07b66961d22515312
+timeCreated: 1454729825
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Images/Racket & DottedLine.aep.zip
+  uploadId: 110214

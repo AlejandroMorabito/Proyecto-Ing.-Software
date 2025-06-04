@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: cc7848465246346708d5b1dc6dbbc93b
+timeCreated: 1454658073
+licenseType: Store
+TrueTypeFontImporter:
+  serializedVersion: 2
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 1
+  characterPadding: 0
+  includeFontData: 1
+  use2xBehaviour: 0
+  fontNames: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e6f3ab51219354c70a52053bc1b3545b, type: 3}
+  - {fileID: 12800000, guid: e98c90529b5be41a4b1d699d0cd56af8, type: 3}
+  - {fileID: 12800000, guid: 3e7d3e622fd30445b9699ecc32b446b6, type: 3}
+  - {fileID: 12800000, guid: cccbcfc3faf59490a9317f3ae21692b9, type: 3}
+  - {fileID: 12800000, guid: fbf6c4857ae5d4fd397d3503437e4ce3, type: 3}
+  - {fileID: 12800000, guid: e09b59e6019ca4b1ebb7deed2f801f43, type: 3}
+  - {fileID: 12800000, guid: fddfde477763d4b0ca624ddc302cbaf3, type: 3}
+  - {fileID: 12800000, guid: 2cd6e4bae428d4862bd8e0d13a71165d, type: 3}
+  - {fileID: 12800000, guid: 57bdc11b55aa541b4af235b5570b7ad3, type: 3}
+  - {fileID: 12800000, guid: 6432147f160a6495ba8d87d2dc10ce58, type: 3}
+  - {fileID: 12800000, guid: 8768138ff74ba49d192642a9c43bdfa3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Fonts/Roboto-Regular.ttf
+  uploadId: 110214

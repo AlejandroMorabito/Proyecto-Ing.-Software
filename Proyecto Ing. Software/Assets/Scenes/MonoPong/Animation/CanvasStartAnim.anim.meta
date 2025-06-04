@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bf372695603cb443bb61bab6e6246b91
+timeCreated: 1454701656
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/CanvasStartAnim.anim
+  uploadId: 110214

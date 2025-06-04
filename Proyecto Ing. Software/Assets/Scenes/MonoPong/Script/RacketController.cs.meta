@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c57421e563b1e4bdd886f383ba8bce00
+timeCreated: 1454648337
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/RacketController.cs
+  uploadId: 110214

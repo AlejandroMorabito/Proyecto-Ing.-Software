@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9b749d61ccb6749858d805add162ddb9
+timeCreated: 1454902888
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/ReadMe.pdf
+  uploadId: 110214

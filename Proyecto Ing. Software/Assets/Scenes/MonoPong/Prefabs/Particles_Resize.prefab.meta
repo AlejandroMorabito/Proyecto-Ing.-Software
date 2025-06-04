@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b0f97df663f5d423591eac80428fcb3a
+timeCreated: 1455516429
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Prefabs/Particles_Resize.prefab
+  uploadId: 110214

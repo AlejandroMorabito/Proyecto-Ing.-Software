@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 71b164acc834d4a2485d9f6821b2b9ab
+timeCreated: 1454697348
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/Canvas.controller
+  uploadId: 110214

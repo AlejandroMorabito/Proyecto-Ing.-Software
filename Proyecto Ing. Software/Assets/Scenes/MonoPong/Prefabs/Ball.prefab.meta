@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7c7f07f8dc4034ca8b6b2bfd725b3b6e
+timeCreated: 1454657532
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Prefabs/Ball.prefab
+  uploadId: 110214

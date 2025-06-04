@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 375d990db8e6f4f83ab3b51b68cd63db
+timeCreated: 1454827084
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/BallTimerAnim_Color.anim
+  uploadId: 110214
