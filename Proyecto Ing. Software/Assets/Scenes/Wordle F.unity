@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 448552450}
   - component: {fileID: 448552453}
   - component: {fileID: 448552452}
-  - component: {fileID: 448552451}
   m_Layer: 5
   m_Name: Game
   m_TagString: Untagged
@@ -158,59 +157,6 @@ RectTransform:
   m_AnchoredPosition: {x: 31.3021, y: 10.91}
   m_SizeDelta: {x: 843.481, y: 1024.118}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &448552451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448552449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2c4a1f9bab69044a92f3e3a7e02004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  countdownText: {fileID: 1378925933}
-  livesText: {fileID: 1275511106}
-  gameOverPanel: {fileID: 549969392}
-  winPanel: {fileID: 1137113229}
 --- !u!114 &448552452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,7 +784,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1400,7 +1347,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1825,7 +1773,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2114,7 +2063,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2403,7 +2353,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2492,7 +2443,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1809110722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49f4763152f2b9b4ea7dc0a34e4fa1ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 42b9d94d9e1ea104883091f9a981ad2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   emptyState:
@@ -2883,7 +2834,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3195002704928247600, guid: 31cc092e8b821a94696a4fe5644d80e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

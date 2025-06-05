@@ -1418,8 +1418,15 @@ MonoBehaviour:
   - {fileID: 0}
   countdownText: {fileID: 1378925933}
   livesText: {fileID: 1275511106}
+  resultText: {fileID: 0}
+  pointsText: {fileID: 0}
   gameOverPanel: {fileID: 549969392}
   winPanel: {fileID: 1137113229}
+  introCanvas: {fileID: 0}
+  juegoCanvas: {fileID: 0}
+  startButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &448552452
 MonoBehaviour:
   m_ObjectHideFlags: 0
