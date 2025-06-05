@@ -2447,17 +2447,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyState:
-    fillColor: {r: 0, g: 0, b: 0, a: 0}
-    outlineColor: {r: 0, g: 0, b: 0, a: 0}
+    fillColor: {r: 0.22745098, g: 0.22745098, b: 0.23529412, a: 1}
+    outlineColor: {r: 0.065483905, g: 0.06551629, b: 0.06918234, a: 1}
   occupiedState:
-    fillColor: {r: 0, g: 0, b: 0, a: 0}
-    outlineColor: {r: 0, g: 0, b: 0, a: 0}
+    fillColor: {r: 0, g: 0, b: 0, a: 1}
+    outlineColor: {r: 0.22745098, g: 0.22745098, b: 0.23529412, a: 1}
   correctState:
-    fillColor: {r: 0, g: 0, b: 0, a: 0}
-    outlineColor: {r: 0, g: 0, b: 0, a: 0}
+    fillColor: {r: 0.36568958, g: 0.54088044, b: 0.39204785, a: 0}
+    outlineColor: {r: 0.3647059, g: 0.5411765, b: 0.39215687, a: 0}
   wrongSpotState:
-    fillColor: {r: 0, g: 0, b: 0, a: 0}
-    outlineColor: {r: 0, g: 0, b: 0, a: 0}
+    fillColor: {r: 0.72955966, g: 0.6633471, b: 0.29595336, a: 0}
+    outlineColor: {r: 0.73333335, g: 0.6666667, b: 0.29803923, a: 0}
   incorrectState:
     fillColor: {r: 0, g: 0, b: 0, a: 0}
     outlineColor: {r: 0, g: 0, b: 0, a: 0}

@@ -51,6 +51,9 @@ public class Board : MonoBehaviour
 
         textFile = Resources.Load("official_wordle_all") as TextAsset;
         validWords = textFile.text.Split(SEPARATOR, System.StringSplitOptions.None);
+
+        textFile = Resources.Load("UNIMET") as TextAsset;
+        validWords = textFile.text.Split(SEPARATOR, System.StringSplitOptions.None);
     }
 
     public void NewGame()
@@ -85,21 +88,22 @@ public class Board : MonoBehaviour
             currentRow.tiles[columnIndex].SetState(emptyState);
             invalidWordText.SetActive(false);
         }
-        else if (columnIndex >= currentRow.tiles.Length)
+        else if (Input.GetKeyDown(KeyCode.Return) && columnIndex >= currentRow.tiles.Length)
         {
-            if (Input.GetKeyDown(KeyCode.Return)) {
-                SubmitRow(currentRow);
-            }
+            SubmitRow(currentRow);
         }
         else
         {
             for (int i = 0; i < SUPPORTED_KEYS.Length; i++)
             {
-                if (Input.GetKeyDown(SUPPORTED_KEYS[i]))
+                if (Input.GetKeyDown(SUPPORTED_KEYS[i])
                 {
-                    currentRow.tiles[columnIndex].SetLetter((char)SUPPORTED_KEYS[i]);
-                    currentRow.tiles[columnIndex].SetState(occupiedState);
-                    columnIndex++;
+                    if (columnIndex < currentRow.tiles.Length) // Solo si hay espacio
+                    {
+                        currentRow.tiles[columnIndex].SetLetter((char)SUPPORTED_KEYS[i]);
+                        currentRow.tiles[columnIndex].SetState(occupiedState);
+                        columnIndex++;
+                    }
                     break;
                 }
             }
@@ -156,14 +160,16 @@ public class Board : MonoBehaviour
             }
         }
 
-        if (HasWon(row)) {
+        if (HasWon(row))
+        {
             enabled = false;
         }
 
         rowIndex++;
         columnIndex = 0;
 
-        if (rowIndex >= rows.Length) {
+        if (rowIndex >= rows.Length)
+        {
             enabled = false;
         }
     }
@@ -172,7 +178,8 @@ public class Board : MonoBehaviour
     {
         for (int i = 0; i < validWords.Length; i++)
         {
-            if (string.Equals(word, validWords[i], System.StringComparison.OrdinalIgnoreCase)) {
+            if (string.Equals(word, validWords[i], System.StringComparison.OrdinalIgnoreCase))
+            {
                 return true;
             }
         }
@@ -184,7 +191,8 @@ public class Board : MonoBehaviour
     {
         for (int i = 0; i < row.tiles.Length; i++)
         {
-            if (row.tiles[i].state != correctState) {
+            if (row.tiles[i].state != correctState)
+            {
                 return false;
             }
         }
