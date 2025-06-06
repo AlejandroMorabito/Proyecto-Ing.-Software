@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ac289c58990af47a88c1ec9ed42d46a2
+timeCreated: 1454825063
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/ColorizeBall.cs
+  uploadId: 110214

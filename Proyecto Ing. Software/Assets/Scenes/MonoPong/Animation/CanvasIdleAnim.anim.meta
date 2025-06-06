@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d7b4a2624cec4a6ca51c4802c527877
+timeCreated: 1454697407
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/CanvasIdleAnim.anim
+  uploadId: 110214

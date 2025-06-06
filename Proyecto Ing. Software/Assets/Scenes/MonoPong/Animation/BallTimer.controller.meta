@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e8ad155ae05b48779a638790a063aaa
+timeCreated: 1454658986
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/BallTimer.controller
+  uploadId: 110214

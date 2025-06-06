@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 96eac01f439ac49ddac5143ae1adec5e
+timeCreated: 1455488113
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Prefabs/PlusBall.prefab
+  uploadId: 110214

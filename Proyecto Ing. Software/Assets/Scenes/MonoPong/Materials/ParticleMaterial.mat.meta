@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 10bb9fbcd8134418ea3fd4fa07e79bff
+timeCreated: 1454667436
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Materials/ParticleMaterial.mat
+  uploadId: 110214

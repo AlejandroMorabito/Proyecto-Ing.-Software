@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 168634f00984e4635ab8427f2e4fca05
+timeCreated: 1456973307
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/AlignWithGameObject.cs
+  uploadId: 110214

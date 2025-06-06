@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b8ca29feda59341959f7a47e4037c847
+timeCreated: 1454658171
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/ScoreScript.cs
+  uploadId: 110214

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 134841c36eca1495a888063518536e23
+timeCreated: 1455686891
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/GameTypeButtonScript.cs
+  uploadId: 110214

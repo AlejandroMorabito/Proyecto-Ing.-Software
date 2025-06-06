@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fa57ef15c53774bac94ffeea8f4139eb
+timeCreated: 1454653139
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Physics/Bounce.physicsMaterial2D
+  uploadId: 110214

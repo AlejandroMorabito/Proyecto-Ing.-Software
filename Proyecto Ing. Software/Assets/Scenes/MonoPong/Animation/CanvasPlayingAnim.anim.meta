@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c51f81a4641e841ffa1d335a27c30c03
+timeCreated: 1454697390
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Animation/CanvasPlayingAnim.anim
+  uploadId: 110214

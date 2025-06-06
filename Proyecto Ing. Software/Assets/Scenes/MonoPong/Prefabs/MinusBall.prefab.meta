@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bbcf69fee4e9f48d0981ef4d06e8f685
+timeCreated: 1455487807
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Prefabs/MinusBall.prefab
+  uploadId: 110214

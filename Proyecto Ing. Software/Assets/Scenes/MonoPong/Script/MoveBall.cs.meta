@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8b40184bc6d884b93908f354d107639f
+timeCreated: 1454652914
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55529
+  packageName: MonoPong
+  packageVersion: 1.6
+  assetPath: Assets/MonoPong/Script/MoveBall.cs
+  uploadId: 110214
