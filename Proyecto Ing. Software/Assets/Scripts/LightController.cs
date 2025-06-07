@@ -1,70 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections;
 using System.Collections.Generic;
 
 public class LightController : MonoBehaviour
 {
-    [Header("UI Settings")]
+    [Header("UI Images Settings")]
     [Tooltip("Asigna las 16 imágenes UI (4x4 grid)")]
     public Image[] uiImages = new Image[16];
-    [Tooltip("Texto para mostrar la puntuación")]
-    public TextMeshProUGUI scoreText;
-    [Tooltip("Texto para mostrar el nivel actual")]
-    public TextMeshProUGUI levelText;
     
-    [Header("Game Settings")]
-    public float delayBetweenGames = 3f;
-    public GameObject introCanvas; // Canvas introductorio
-    public GameObject juegoCanvas;
     private readonly Color color0 = new Color(0.0627f, 0.4745f, 0f); // #107900
     private readonly Color color1 = new Color(0.1255f, 1f, 0f);      // #20FF00
     private List<int> imageValues = new List<int>();
     private const int gridSize = 4;
     private bool allSameColor = false;
-    private bool isAnimating = false;
-    private int currentLevel = 1;
-    private int totalScore = 0;
-    public PlayerController playerController;
-    public Button exitButton;
 
     void Start()
     {
-        introCanvas.SetActive(false);
-        juegoCanvas.SetActive(false);
-        InitializeGame();
-        UpdateUI();
-        exitButton.onClick.AddListener(OnExitButtonPressed);
+        InitializeImages();
     }
 
-    public void OnExitButtonPressed()
+    void InitializeImages()
     {
-        // Reiniciar puntuación y nivel
-        ResetGameState();
-        
-        // Desactivar canvas del juego
-        juegoCanvas.SetActive(false);
-        
-        // Reactivar controles del jugador
-        if (playerController != null)
-        {
-            playerController.enabled = true;
-        }
-    }
-
-    void ResetGameState()
-    {
-        totalScore = 0;
-        currentLevel = 1;
-        UpdateUI();
-        InitializeGame();
-    }
-
-    void InitializeGame()
-    {
-        allSameColor = false;
-        isAnimating = false;
         imageValues.Clear();
         
         if (uiImages == null || uiImages.Length != 16)
@@ -90,31 +46,21 @@ public class LightController : MonoBehaviour
             int index = i;
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => {
-                if (!allSameColor && !isAnimating) 
-                {
-                    ToggleImageAndCross(index);
-                    CheckSolution();
-                }
+                ToggleImageAndCross(index);
+                CheckSolution();
             });
 
-            imageValues.Add(0);
+            imageValues.Add(0); // Inicializar a 0 temporalmente
+            UpdateImageColor(i);
         }
 
-        GenerateSolvablePuzzle();
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        if (scoreText != null)
-            scoreText.text = $"Puntos: {totalScore}";
-        
-        if (levelText != null)
-            levelText.text = $"Nivel: {currentLevel}";
+        GenerateSolvablePuzzle(); // Generar puzzle solucionable al inicio
     }
 
     void ToggleImageAndCross(int index)
     {
+        if (allSameColor) return;
+
         ToggleSingleImage(index);
         
         int row = index / gridSize;
@@ -152,50 +98,45 @@ public class LightController : MonoBehaviour
 
         if (allSameColor)
         {
-            totalScore++; // Aumentar puntuación al ganar
-            StartCoroutine(CompleteLevelRoutine());
+            Debug.Log("¡Felicidades! Todas las imágenes son verdes brillantes (#20FF00)");
+            ShowWinEffect();
         }
     }
 
-    IEnumerator CompleteLevelRoutine()
+    void ShowWinEffect()
     {
-        isAnimating = true;
-        yield return StartCoroutine(WinAnimation());
-        
-        yield return new WaitForSeconds(delayBetweenGames);
-        
-        currentLevel++;
-        InitializeGame();
-        UpdateUI();
+        StartCoroutine(WinAnimation());
     }
 
-    IEnumerator WinAnimation()
+    System.Collections.IEnumerator WinAnimation()
     {
         for (int i = 0; i < 5; i++)
         {
             foreach (var img in uiImages)
             {
-                if (img != null) img.color = Color.white;
+                img.color = Color.white;
             }
             yield return new WaitForSeconds(0.2f);
             
             foreach (var img in uiImages)
             {
-                if (img != null) img.color = color1;
+                img.color = color1;
             }
             yield return new WaitForSeconds(0.2f);
         }
     }
 
-    void GenerateSolvablePuzzle()
+    public void GenerateSolvablePuzzle()
     {
+        // Primero pon todas a 1 (estado ganador)
         for (int i = 0; i < imageValues.Count; i++)
         {
             imageValues[i] = 1;
             UpdateImageColor(i);
         }
 
-        int moves = Mathf.Min(5 + currentLevel, 15);
+        // Generar una solución aleatoria (entre 3 y 8 movimientos)
+        int moves = Random.Range(7, 12);
         List<int> solutionMoves = new List<int>();
 
         for (int i = 0; i < moves; i++)
@@ -204,9 +145,37 @@ public class LightController : MonoBehaviour
             solutionMoves.Add(randomIndex);
         }
 
+        // Aplicar la solución inversa para crear el puzzle
         foreach (int move in solutionMoves)
         {
             ToggleImageAndCross(move);
         }
+
+        // Guardar la solución para referencia (opcional)
+        PlayerPrefs.SetString("CurrentSolution", string.Join(",", solutionMoves));
+    }
+
+    public void ShowSolution()
+    {
+        string solution = PlayerPrefs.GetString("CurrentSolution", "");
+        if (!string.IsNullOrEmpty(solution))
+        {
+            Debug.Log("Solución: " + solution);
+        }
+        else
+        {
+            Debug.Log("No hay solución guardada");
+        }
+    }
+
+    public void ForceWinState()
+    {
+        for (int i = 0; i < imageValues.Count; i++)
+        {
+            imageValues[i] = 1;
+            UpdateImageColor(i);
+        }
+        allSameColor = true;
+        ShowWinEffect();
     }
 }

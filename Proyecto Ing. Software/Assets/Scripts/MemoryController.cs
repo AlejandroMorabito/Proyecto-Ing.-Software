@@ -11,6 +11,7 @@ public class MemoryController : MonoBehaviour
     public TextMeshProUGUI countdownText;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI resultText;
+    public TextMeshProUGUI pointsText;
     public GameObject gameOverPanel;
     public GameObject winPanel;
     public GameObject introCanvas; // Canvas introductorio
@@ -30,22 +31,21 @@ public class MemoryController : MonoBehaviour
     private int totalPoints = 0;
     private Coroutine gameRoutine;
     public PlayerController playerController; // Referencia al script de movimiento del jugador
-
+    
     void Start()
     {
         // Configurar los botones
         startButton.onClick.AddListener(StartGameFromIntro);
         exitButton.onClick.AddListener(ExitGame);
-
+        
         // Mostrar solo el canvas introductorio
         introCanvas.SetActive(false);
         juegoCanvas.SetActive(false);
         gameOverPanel.SetActive(false);
         winPanel.SetActive(false);
-
+        
         // Ocultar elementos del juego
         SetGameElementsActive(false);
-        ResetAllTexts();
     }
 
     // Método para salir del juego
@@ -56,17 +56,8 @@ public class MemoryController : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
-
-            ResetAllTexts();
         }
 
-    }
-    
-    void ResetAllTexts()
-    {
-        countdownText.text = "";
-        livesText.text = "";
-        resultText.text = "";
     }
 
     public void StartGameFromIntro()
@@ -75,9 +66,10 @@ public class MemoryController : MonoBehaviour
         introCanvas.SetActive(false);
         juegoCanvas.SetActive(true);
         SetGameElementsActive(true);
-
+        
         // Iniciar juego
         totalPoints = 0;
+        UpdatePointsUI();
         StartNewGame();
     }
 
@@ -89,6 +81,7 @@ public class MemoryController : MonoBehaviour
         }
         countdownText.gameObject.SetActive(active);
         livesText.gameObject.SetActive(active);
+        pointsText.gameObject.SetActive(active);
     }
 
     public void StartNewGame()
@@ -125,6 +118,12 @@ public class MemoryController : MonoBehaviour
 
         livesText.text = "Vidas: " + lives;
     }
+
+    private void UpdatePointsUI()
+    {
+        pointsText.text = "Puntos: " + totalPoints;
+    }
+
     private IEnumerator GameLoop()
     {
         SetRandomHighlightedImages(6);
@@ -179,6 +178,7 @@ public class MemoryController : MonoBehaviour
             if(CheckWinCondition())
             {
                 totalPoints++;
+                UpdatePointsUI();
                 StartCoroutine(EndGame(true));
             }
         }
@@ -191,6 +191,7 @@ public class MemoryController : MonoBehaviour
             if(lives <= 0)
             {
                 totalPoints = Mathf.Max(0, totalPoints - 1);
+                UpdatePointsUI();
                 StartCoroutine(EndGame(false));
             }
         }
