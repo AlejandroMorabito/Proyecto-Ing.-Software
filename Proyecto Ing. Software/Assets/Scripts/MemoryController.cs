@@ -16,6 +16,7 @@ public class MemoryController : MonoBehaviour
     public GameObject winPanel;
     public GameObject introCanvas; // Canvas introductorio
     public GameObject juegoCanvas;
+    public GameObject HUDCanvas;
     public Button startButton; // Botón para comenzar
     public Button exitButton; // Nuevo botón para salir
 
@@ -44,6 +45,7 @@ public class MemoryController : MonoBehaviour
         gameOverPanel.SetActive(false);
         winPanel.SetActive(false);
         
+        
         // Ocultar elementos del juego
         SetGameElementsActive(false);
     }
@@ -56,6 +58,7 @@ public class MemoryController : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
+            HUDCanvas.SetActive(true);
         }
 
     }

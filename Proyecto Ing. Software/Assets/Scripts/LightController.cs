@@ -18,6 +18,7 @@ public class LightController : MonoBehaviour
     public float delayBetweenGames = 3f;
     public GameObject introCanvas; // Canvas introductorio
     public GameObject juegoCanvas;
+    public GameObject HUDCanvas;
     private readonly Color color0 = new Color(0.0627f, 0.4745f, 0f); // #107900
     private readonly Color color1 = new Color(0.1255f, 1f, 0f);      // #20FF00
     private List<int> imageValues = new List<int>();
@@ -45,11 +46,12 @@ public class LightController : MonoBehaviour
         
         // Desactivar canvas del juego
         juegoCanvas.SetActive(false);
-        
+
         // Reactivar controles del jugador
         if (playerController != null)
         {
             playerController.enabled = true;
+            HUDCanvas.SetActive(true);
         }
     }
 

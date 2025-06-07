@@ -3,6 +3,7 @@ using UnityEngine;
 public class ActivarCanvas : MonoBehaviour
 {
     public GameObject canvasUI;
+    public GameObject HUDCanvas;
     private bool jugadorDentro = false;
     public int Estres = 0;
     public PlayerController playerController; // Referencia al script de movimiento del jugador
@@ -33,6 +34,7 @@ public class ActivarCanvas : MonoBehaviour
         {
             bool canvasActivo = !canvasUI.activeSelf;
             canvasUI.SetActive(canvasActivo);
+            HUDCanvas.SetActive(false);
 
             if (playerController != null)
             {
