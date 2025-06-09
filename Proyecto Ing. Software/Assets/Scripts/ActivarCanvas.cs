@@ -5,8 +5,16 @@ public class ActivarCanvas : MonoBehaviour
     public GameObject canvasUI;
     public GameObject HUDCanvas;
     private bool jugadorDentro = false;
-    public int Estres = 0;
-    public PlayerController playerController; // Referencia al script de movimiento del jugador
+    public PlayerController playerController;
+    
+    // Referencia al HUDController para mostrar mensajes
+    private HUDController hudController;
+
+    private void Start()
+    {
+        // Buscar el HUDController al inicio
+        hudController = FindObjectOfType<HUDController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,24 +34,49 @@ public class ActivarCanvas : MonoBehaviour
 
     private void Update()
     {
-        if (Estres == 100)
+        if (jugadorDentro)
         {
-            Debug.Log("Nivel de estres alto");
+            // Mostrar mensaje solo si tenemos referencia al HUDController
+            if (hudController != null)
+            {
+                hudController.MostrarMensaje($"Presiona E para estudiar");
+            }
+        }
+        // Verificación segura de PlayerStatsManager
+        if (PlayerStatsManager.Instance == null) return;
+
+        if (PlayerStatsManager.Instance.Estres >= 100)
+        {
+            // Mostrar mensaje en el HUD en lugar de Debug.Log
+            if (hudController != null)
+            {
+                hudController.MostrarMensaje("¡Nivel de estrés máximo alcanzado!");
+            }
+            
+            // Cerrar el canvas si está abierto
+            if (canvasUI != null && canvasUI.activeSelf)
+            {
+                canvasUI.SetActive(false);
+                if (HUDCanvas != null)GetComponent<Canvas>().enabled = true;
+                if (playerController != null) playerController.enabled = true;
+            }
         }
         else if (jugadorDentro && Input.GetKeyDown(KeyCode.E))
         {
+            if (canvasUI == null) return;
+
             bool canvasActivo = !canvasUI.activeSelf;
             canvasUI.SetActive(canvasActivo);
-            HUDCanvas.SetActive(false);
+            
+            if (HUDCanvas != null)
+            {
+                GetComponent<Canvas>().enabled = false;  
+            }
 
             if (playerController != null)
             {
-                playerController.enabled = !canvasActivo; // Desactiva el control del jugador
+                playerController.enabled = !canvasActivo;
             }
         }
     }
 }
-
-
-
-

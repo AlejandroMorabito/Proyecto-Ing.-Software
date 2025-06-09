@@ -51,7 +51,7 @@ public class LightController : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
-            HUDCanvas.SetActive(true);
+            GetComponent<Canvas>().enabled = true;  
         }
     }
 
@@ -154,7 +154,24 @@ public class LightController : MonoBehaviour
 
         if (allSameColor)
         {
-            totalScore++; // Aumentar puntuación al ganar
+            // Añadir puntos al ganar (ahora usando valores enteros)
+            PlayerStatsManager.Instance.AddConocimiento(1); // +1 punto de conocimiento
+            PlayerStatsManager.Instance.AddEstres(2);       // +2 puntos de estrés
+            
+            // Verificar si el estrés alcanzó el máximo (100)
+            if (PlayerStatsManager.Instance.Estres >= 100)
+            {
+                juegoCanvas.SetActive(false);
+
+                // Reactivar controles del jugador
+                if (playerController != null)
+                {
+                    playerController.enabled = true;
+                   GetComponent<Canvas>().enabled = true;
+                }
+            }
+            
+            totalScore++;
             StartCoroutine(CompleteLevelRoutine());
         }
     }

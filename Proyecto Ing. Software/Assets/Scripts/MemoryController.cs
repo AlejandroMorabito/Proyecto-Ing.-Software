@@ -14,11 +14,11 @@ public class MemoryController : MonoBehaviour
     public TextMeshProUGUI pointsText;
     public GameObject gameOverPanel;
     public GameObject winPanel;
-    public GameObject introCanvas; // Canvas introductorio
+    public GameObject introCanvas;
     public GameObject juegoCanvas;
     public GameObject HUDCanvas;
-    public Button startButton; // Botón para comenzar
-    public Button exitButton; // Nuevo botón para salir
+    public Button startButton;
+    public Button exitButton;
 
     private readonly Color color0 = new Color(0f, 42f/255f, 152f/255f);
     private readonly Color color1 = new Color(47f/255f, 104f/255f, 255f/255f);
@@ -31,46 +31,54 @@ public class MemoryController : MonoBehaviour
     private int score = 0;
     private int totalPoints = 0;
     private Coroutine gameRoutine;
-    public PlayerController playerController; // Referencia al script de movimiento del jugador
-    
+    public PlayerController playerController;
+
+    // Valores de recompensa/castigo
+    [Header("Recompensas")]
+    public int conocimientoPorGanar = 2;
+    public int estresPorGanar = 1;
+    public int conocimientoPorPerder = -1;
+    public int estresPorPerder = 2;
+
     void Start()
     {
-        // Configurar los botones
         startButton.onClick.AddListener(StartGameFromIntro);
         exitButton.onClick.AddListener(ExitGame);
         
-        // Mostrar solo el canvas introductorio
         introCanvas.SetActive(false);
         juegoCanvas.SetActive(false);
         gameOverPanel.SetActive(false);
         winPanel.SetActive(false);
         
-        
-        // Ocultar elementos del juego
         SetGameElementsActive(false);
     }
 
-    // Método para salir del juego
+    void Update()
+    {
+        // Verificación del nivel de estrés
+        if (PlayerStatsManager.Instance != null && PlayerStatsManager.Instance.Estres >= 100)
+        {
+            ExitGame();
+        }
+    }
+
+
     public void ExitGame()
     {
         juegoCanvas.SetActive(false);
-        // Reactivar controles del jugador
         if (playerController != null)
         {
             playerController.enabled = true;
-            HUDCanvas.SetActive(true);
+           GetComponent<Canvas>().enabled = true;
         }
-
     }
 
     public void StartGameFromIntro()
     {
-        // Ocultar intro y mostrar elementos del juego
         introCanvas.SetActive(false);
         juegoCanvas.SetActive(true);
         SetGameElementsActive(true);
         
-        // Iniciar juego
         totalPoints = 0;
         UpdatePointsUI();
         StartNewGame();
@@ -130,7 +138,7 @@ public class MemoryController : MonoBehaviour
     private IEnumerator GameLoop()
     {
         SetRandomHighlightedImages(6);
-        countdownText.text = "Memoriza...";
+        countdownText.text = "Memoriza";
         yield return new WaitForSeconds(5f);
 
         foreach(int index in correctIndices)
@@ -182,6 +190,9 @@ public class MemoryController : MonoBehaviour
             {
                 totalPoints++;
                 UpdatePointsUI();
+                // Añadir recompensas al ganar
+                PlayerStatsManager.Instance.AddConocimiento(conocimientoPorGanar);
+                PlayerStatsManager.Instance.AddEstres(estresPorGanar);
                 StartCoroutine(EndGame(true));
             }
         }
@@ -195,6 +206,9 @@ public class MemoryController : MonoBehaviour
             {
                 totalPoints = Mathf.Max(0, totalPoints - 1);
                 UpdatePointsUI();
+                // Añadir penalizaciones al perder
+                PlayerStatsManager.Instance.AddConocimiento(conocimientoPorPerder);
+                PlayerStatsManager.Instance.AddEstres(estresPorPerder);
                 StartCoroutine(EndGame(false));
             }
         }
@@ -216,12 +230,12 @@ public class MemoryController : MonoBehaviour
         if(won)
         {
             winPanel.SetActive(true);
-            resultText.text = "¡Ganaste! Puntos: +1\nTotal: " + totalPoints;
+            resultText.text = $"¡Ganaste! Puntos: +1\nTotal: {totalPoints}";
         }
         else
         {
             gameOverPanel.SetActive(true);
-            resultText.text = "Perdiste. Puntos: -1\nTotal: " + totalPoints;
+            resultText.text = $"Perdiste. Puntos: -1\nTotal: {totalPoints}";
         }
 
         yield return new WaitForSeconds(2f);

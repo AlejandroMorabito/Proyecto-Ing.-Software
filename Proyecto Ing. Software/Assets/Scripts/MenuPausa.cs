@@ -74,10 +74,6 @@ public class MenuPausa : MonoBehaviour
         {
             playerController.enabled = true;
         }
-        
-        // Opcional: Ocultar el cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void MostrarCronograma()
