@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+
     [Header("Configuración de Marcador")]
     [SerializeField] private int winningScore = 11;
     [SerializeField] private TextMeshProUGUI player1ScoreText;
