@@ -5,7 +5,7 @@ public class Paddle : MonoBehaviour
     [SerializeField] private float speed = 7f;
     [SerializeField] private float playerSpeedMultiplier = 1.5f; // Multiplicador de velocidad para jugador
     [SerializeField] private bool isPaddle1;
-    [SerializeField] private bool isAI = false;
+    [SerializeField] private bool isAI;
     private float yBound = 3.75f;
     private Rigidbody2D rb;
     private Transform ball;
@@ -45,7 +45,11 @@ public class Paddle : MonoBehaviour
         newPosition.y = Mathf.Clamp(newPosition.y + movement * speed * Time.deltaTime, -yBound, yBound);
         transform.position = newPosition;
     }
-
+    public void setAI(bool hoola)
+    {
+        isAI = hoola;
+        Debug.Log(hoola);
+    }
     private float CalculateAIMovement()
     {
         if (ball != null)
