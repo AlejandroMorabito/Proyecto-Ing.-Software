@@ -9,6 +9,8 @@ public class PlayerStatsManager : MonoBehaviour
     // Valores actuales (0-100)
     public int _conocimiento = 0;
     public int _estres = 0;
+    public string _nombrePJ = null;
+    public int _semana = 1; // Semana actual del juego
 
     // Sistema de reloj mejorado
     public DateTime _horaActual = new DateTime(1, 1, 1, 6, 0, 0); // 6:00 AM inicial
@@ -55,6 +57,17 @@ public class PlayerStatsManager : MonoBehaviour
         }
     }
 
+    #region Nombre PJ
+    public void setnombre(string n)
+    {
+        _nombrePJ = n;
+        Debug.Log($"Nombre del personaje establecido: {_nombrePJ}");
+    }
+    
+    public string NombrePJ => _nombrePJ;
+
+    #endregion
+
     #region Métodos del Reloj
     public void AvanzarReloj(int minutos)
     {
@@ -84,7 +97,8 @@ public class PlayerStatsManager : MonoBehaviour
 
     public string GetHoraFormateada()
     {
-        return _horaActual.ToString("hh:mm tt").ToUpper(); // Ejemplo: "06:00 AM"
+        // Reemplaza el espacio por un espacio no separable
+        return _horaActual.ToString("hh:mm tt").Replace(" ", "\u00A0").ToUpper();
     }
 
     public (int hora, int minutos) GetHoraYMinutosActual()
@@ -126,11 +140,11 @@ public class PlayerStatsManager : MonoBehaviour
 
     public int Conocimiento => _conocimiento;
     public int Estres => _estres;
+    public int Semana => _semana;
     #endregion
-    
 
     public void DebugStats()
     {
-        Debug.Log($"Estado actual - Conocimiento: {_conocimiento}, Estres: {_estres}, Hora: {GetHoraFormateada()}");
+        Debug.Log($"Estado actual - Conocimiento: {_conocimiento}, Estres: {_estres}, Semana: {_semana}, Hora: {GetHoraFormateada()}");
     }
 }

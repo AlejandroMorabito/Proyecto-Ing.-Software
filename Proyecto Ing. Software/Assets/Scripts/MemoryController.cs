@@ -69,7 +69,7 @@ public class MemoryController : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
-           GetComponent<Canvas>().enabled = true;
+            GetComponent<Canvas>().enabled = true;
         }
     }
 

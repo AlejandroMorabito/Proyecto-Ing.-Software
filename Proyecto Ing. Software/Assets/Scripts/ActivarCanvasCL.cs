@@ -1,8 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ActivarCanvasCL : MonoBehaviour
 {
-    public GameObject canvasUI;
+    public GameObject canvasGame;
+    public GameObject canvasNotas;
+    public List<int> SemanasExamenes = new List<int>();
+
+    [Header("Canvas HUD")]
     public GameObject HUDCanvas;
     private bool jugadorDentro = false;
     public PlayerController playerController;
@@ -73,10 +78,10 @@ public class ActivarCanvasCL : MonoBehaviour
                 hudController.MostrarMensaje("¡Nivel de estrés máximo alcanzado!");
             }
             
-            if (canvasUI != null && canvasUI.activeSelf)
+            if (canvasGame != null && canvasGame.activeSelf)
             {
-                canvasUI.SetActive(false);
-                if (HUDCanvas != null)GetComponent<Canvas>().enabled = true;
+                canvasGame.SetActive(false);
+                if (HUDCanvas != null) GetComponent<Canvas>().enabled = true;
                 if (playerController != null) playerController.enabled = true;
             }
             return;
@@ -92,29 +97,37 @@ public class ActivarCanvasCL : MonoBehaviour
                 return;
             }
 
-            if (canvasUI == null) return;
+            if (canvasGame == null && canvasNotas == null) return;
 
-            bool canvasActivo = !canvasUI.activeSelf;
-            canvasUI.SetActive(canvasActivo);
-            
+            if (SemanasExamenes.Contains(PlayerStatsManager.Instance.Semana))
+            {
+                // Si la semana actual está en la lista de semanas de exámenes, activar el canvas de notas
+                canvasNotas.SetActive(true);
+                if (playerController != null) playerController.enabled = false;
+            }
+            else
+            {
+                // Si no es semana de examen, activar el canvas de estudio
+                bool canvasActivo = !canvasGame.activeSelf;
+                canvasGame.SetActive(canvasActivo);
+                if (playerController != null) playerController.enabled = !canvasActivo;
+            }
+
             if (HUDCanvas != null)
             {
                 GetComponent<Canvas>().enabled = false;  
             }
-
-            if (playerController != null)
-            {
-                playerController.enabled = !canvasActivo;
-            }
         }
     }
+    
+    
 
     private bool EsHoraPermitida()
     {
         if (PlayerStatsManager.Instance == null) return false;
-        
+
         var (horaActual, minutoActual) = PlayerStatsManager.Instance.GetHoraYMinutosActual();
-        
+
         // Convertir a minutos totales para comparación precisa
         int totalActual = horaActual * 60 + minutoActual;
         int totalInicio = horaInicio * 60 + minutoInicio;

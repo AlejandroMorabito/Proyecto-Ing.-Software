@@ -21,7 +21,18 @@ public class HUDController : MonoBehaviour
         if (PlayerStatsManager.Instance != null)
         {
             ActualizarHoraUI(PlayerStatsManager.Instance.GetHoraFormateada());
+            ActualizarConocimientoUI(PlayerStatsManager.Instance.Conocimiento);
+            ActualizarEstresUI(PlayerStatsManager.Instance.Estres);
         }
+        else
+        {
+            Debug.LogWarning("PlayerStatsManager no encontrado en Awake. Asegúrate de que esté inicializado antes de HUDController.");
+        }
+        // Ajustar auto-sizing de los textos
+        AjustarAutoSizeTMP(textoConocimiento);
+        AjustarAutoSizeTMP(textoEstres);
+        AjustarAutoSizeTMP(textoHora);
+        AjustarAutoSizeTMP(textoMensaje);
     }
 
     private void OnEnable()
@@ -71,7 +82,7 @@ public class HUDController : MonoBehaviour
     {
         if (textoHora != null)
         {
-            textoHora.text = hora;
+            textoHora.text = $"{PlayerStatsManager.Instance.NombrePJ}\n\nSemana {PlayerStatsManager.Instance.Semana}\n{hora}";
             Debug.Log("Hora actualizada en UI: " + hora);
         }
         else
@@ -105,5 +116,15 @@ public class HUDController : MonoBehaviour
         yield return new WaitForSeconds(tiempo);
         textoMensaje.gameObject.SetActive(false);
         mensajeCoroutine = null;
+    }
+
+    private void AjustarAutoSizeTMP(TMP_Text tmpText, int minSize = 14, int maxSize = 36)
+    {
+        if (tmpText != null)
+        {
+            tmpText.enableAutoSizing = true;
+            tmpText.fontSizeMin = minSize;
+            tmpText.fontSizeMax = maxSize;
+        }
     }
 }
