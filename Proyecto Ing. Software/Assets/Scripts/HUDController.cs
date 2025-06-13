@@ -78,11 +78,11 @@ public class HUDController : MonoBehaviour
             textoEstres.text = $"{valor}";
     }
 
-    private void ActualizarHoraUI(string hora)
+    public void ActualizarHoraUI(string hora)
     {
         if (textoHora != null)
         {
-            textoHora.text = $"{PlayerStatsManager.Instance.NombrePJ}\n\nSemana {PlayerStatsManager.Instance.Semana}\n{hora}";
+            textoHora.text = $"{PlayerStatsManager.Instance.NombrePJ}\n\nSemana {PlayerStatsManager.Instance.Semana}\n{PlayerStatsManager.Instance.ObtenerDiaSemana()}\n{hora}";
             Debug.Log("Hora actualizada en UI: " + hora);
         }
         else

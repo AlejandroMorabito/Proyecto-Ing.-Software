@@ -25,4 +25,10 @@ public class ScoreScript : MonoBehaviour {
         Score = 0;
         gameObject.GetComponent<Text>().text = Score.ToString();
     }
+
+    // Método para consultar el score desde otros scripts
+    public int GetScore()
+    {
+        return Score;
+    }
 }

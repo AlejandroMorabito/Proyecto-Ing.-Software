@@ -11,6 +11,7 @@ public class PlayerStatsManager : MonoBehaviour
     public int _estres = 0;
     public string _nombrePJ = null;
     public int _semana = 1; // Semana actual del juego
+    private int _dia = 1; // 1 = lunes, 2 = martes, ..., 7 = domingo
 
     // Sistema de reloj mejorado
     public DateTime _horaActual = new DateTime(1, 1, 1, 6, 0, 0); // 6:00 AM inicial
@@ -63,7 +64,7 @@ public class PlayerStatsManager : MonoBehaviour
         _nombrePJ = n;
         Debug.Log($"Nombre del personaje establecido: {_nombrePJ}");
     }
-    
+
     public string NombrePJ => _nombrePJ;
 
     #endregion
@@ -146,5 +147,30 @@ public class PlayerStatsManager : MonoBehaviour
     public void DebugStats()
     {
         Debug.Log($"Estado actual - Conocimiento: {_conocimiento}, Estres: {_estres}, Semana: {_semana}, Hora: {GetHoraFormateada()}");
+    }
+
+    public string ObtenerDiaSemana()
+    {
+        switch (_dia)
+        {
+            case 1: return "Lunes";
+            case 2: return "Martes";
+            case 3: return "Miércoles";
+            case 4: return "Jueves";
+            case 5: return "Viernes";
+            case 6: return "Sábado";
+            case 7: return "Domingo";
+            default: return "Día inválido";
+        }
+    }
+    public void AvanzarDia(int cantidad)
+    {
+        _dia += cantidad;
+        if (_dia > 7)
+        {
+            _dia = 1;
+            _semana++;
+        }
+        Debug.Log($"Día avanzado a: {ObtenerDiaSemana()}, Semana: {_semana}");
     }
 }
