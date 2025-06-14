@@ -24,6 +24,7 @@ public class InicioMonoPong : MonoBehaviour
         if (playButton != null)
         {
             playButton.onClick.AddListener(CambiarEscena);
+            Debug.LogError("presionado Play");
         }
         else
         {

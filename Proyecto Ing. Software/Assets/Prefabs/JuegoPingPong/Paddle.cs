@@ -4,21 +4,47 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] private float speed = 7f;
     [SerializeField] private float playerSpeedMultiplier = 1.5f; // Multiplicador de velocidad para jugador
-    [SerializeField] private bool isPaddle1;
-    [SerializeField] private bool isAI;
+    [SerializeField] public bool isPaddle1;
+    [SerializeField] public bool isAI;
     private float yBound = 3.75f;
     private Rigidbody2D rb;
     private Transform ball;
+    public Game_Manager Game_Manager;
+
+    // Referencias a los textos de UI
+    public GameObject winText;
+    public GameObject gameOverText;
 
     void Start()
     {
+        // Oculta los textos al iniciar
+        if (winText != null) winText.SetActive(false);
+        if (gameOverText != null) gameOverText.SetActive(false);
+
+        if (!CompareTag("Paddle1"))
+        {
+            isAI = false;   
+            isPaddle1 = true;
+        }
+        // Inicializar el Game_Manager
+        Game_Manager = FindObjectOfType<Game_Manager>();
         rb = GetComponent<Rigidbody2D>();
         ball = GameObject.FindGameObjectWithTag("Ball").transform;
     }
 
     void Update()
     {
+        if (!CompareTag("Paddle2"))
+        { 
+            isAI = Game_Manager.getAI();   
+            isPaddle1 = false;
+        }
         float movement = 0f;
+
+        if(isAI == false)
+        {
+            speed = 7f; // Velocidad normal para jugador
+        }
 
         if (isPaddle1)
         {
@@ -44,11 +70,6 @@ public class Paddle : MonoBehaviour
         Vector2 newPosition = transform.position;
         newPosition.y = Mathf.Clamp(newPosition.y + movement * speed * Time.deltaTime, -yBound, yBound);
         transform.position = newPosition;
-    }
-    public void setAI(bool hoola)
-    {
-        isAI = hoola;
-        Debug.Log(hoola);
     }
     private float CalculateAIMovement()
     {

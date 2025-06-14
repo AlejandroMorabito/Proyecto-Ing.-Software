@@ -6,6 +6,9 @@ public class MenuPausa : MonoBehaviour
 {
     [Header("Referencias")]
     public GameObject menuPausaCanvas;
+    public GameObject calendarioCanvas;
+    public GameObject horarioCanvas;
+    public GameObject cronogramaCanvas; 
     public PlayerController playerController; // Referencia a tu script de control del jugador
     public Button botonReanudar;
     public Button botonCronograma;
@@ -18,7 +21,10 @@ public class MenuPausa : MonoBehaviour
     {
         // Configurar el estado inicial
         menuPausaCanvas.SetActive(false);
-        
+        calendarioCanvas.SetActive(false);
+        horarioCanvas.SetActive(false); 
+        cronogramaCanvas.SetActive(false);
+    
         // Asignar listeners a los botones
         botonReanudar.onClick.AddListener(ReanudarJuego);
         botonCronograma.onClick.AddListener(MostrarCronograma);
@@ -78,8 +84,8 @@ public class MenuPausa : MonoBehaviour
 
     void MostrarCronograma()
     {
-        Debug.Log("Cronograma presionado (función no implementada)");
-        // Aquí puedes implementar la lógica del cronograma
+        menuPausaCanvas.SetActive(false);
+        cronogramaCanvas.SetActive(true);
     }
 
     void GuardarPartida()
