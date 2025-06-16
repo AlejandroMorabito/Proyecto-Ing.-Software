@@ -43,6 +43,9 @@ public class PlayerStatsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Mantiene el objeto al cambiar de escena
         Debug.Log($"PlayerStatsManager inicializado. Instancia ID: {GetInstanceID()}");
         OnHoraCambiada?.Invoke(GetHoraFormateada()); // Notifica la hora inicial
+
+        // Pausa el reloj al iniciar el juego
+        _relojPausado = true;
     }
 
     /// <summary>
@@ -231,5 +234,15 @@ public class PlayerStatsManager : MonoBehaviour
             _semana++;
         }
         Debug.Log($"Día avanzado a: {ObtenerDiaSemana()}, Semana: {_semana}");
+    }
+
+    /// <summary>
+    /// Inicia el reloj (lo reanuda si estaba pausado).
+    /// Llama a este método desde el botón de tu UI.
+    /// </summary>
+    public void IniciarReloj()
+    {
+        _relojPausado = false;
+        Debug.Log("¡Reloj iniciado por botón!");
     }
 }

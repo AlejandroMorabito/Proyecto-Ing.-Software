@@ -52,6 +52,7 @@ public class Cama : MonoBehaviour
         {
             StartCoroutine(Blink());
             PlayerStatsManager.Instance.AvanzarDia(1);
+            PlayerStatsManager.Instance.ReiniciarReloj();
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

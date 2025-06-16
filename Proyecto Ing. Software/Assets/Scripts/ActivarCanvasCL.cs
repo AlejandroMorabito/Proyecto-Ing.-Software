@@ -23,6 +23,10 @@ public class ActivarCanvasCL : MonoBehaviour
     [Range(0, 23)] public int horaFin = 18;   // 6:00 PM
     [Range(0, 59)] public int minutoFin = 0;
 
+    [Header("Días Permitidos")]
+    [Tooltip("Días de la semana permitidos (ejemplo: Lunes, Martes, etc.)")]
+    public List<string> diasPermitidos = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+
     private void Start()
     {
         // Buscar el HUDController al inicio
@@ -59,13 +63,13 @@ public class ActivarCanvasCL : MonoBehaviour
         {
             if (hudController != null)
             {
-                if (EsHoraPermitida())
+                if (EsDiaYHoraPermitida())
                 {
                     hudController.MostrarMensaje("Presiona E para estudiar");
                 }
                 else
                 {
-                    hudController.MostrarMensaje("No es la hora adecuada para estudiar");
+                    hudController.MostrarMensaje("No es el día u hora adecuada para estudiar");
                 }
             }
         }
@@ -90,10 +94,11 @@ public class ActivarCanvasCL : MonoBehaviour
         // Interacción con E
         if (jugadorDentro && Input.GetKeyDown(KeyCode.E))
         {
-            if (!EsHoraPermitida())
+            if (!EsDiaYHoraPermitida())
             {
                 string horarioPermitido = $"{horaInicio:00}:{minutoInicio:00} - {horaFin:00}:{minutoFin:00}";
-                hudController?.MostrarMensaje($"Horario permitido: {horarioPermitido}", 3f);
+                string dias = string.Join(", ", diasPermitidos);
+                hudController?.MostrarMensaje($"Días permitidos: {dias}\nHorario permitido: {horarioPermitido}", 3f);
                 return;
             }
 
@@ -120,15 +125,16 @@ public class ActivarCanvasCL : MonoBehaviour
         }
     }
     
-    
-
-    private bool EsHoraPermitida()
+    private bool EsDiaYHoraPermitida()
     {
         if (PlayerStatsManager.Instance == null) return false;
 
-        var (horaActual, minutoActual) = PlayerStatsManager.Instance.GetHoraYMinutosActual();
+        // Verifica el día
+        string diaActual = PlayerStatsManager.Instance.ObtenerDiaSemana();
+        if (!diasPermitidos.Contains(diaActual)) return false;
 
-        // Convertir a minutos totales para comparación precisa
+        // Verifica la hora
+        var (horaActual, minutoActual) = PlayerStatsManager.Instance.GetHoraYMinutosActual();
         int totalActual = horaActual * 60 + minutoActual;
         int totalInicio = horaInicio * 60 + minutoInicio;
         int totalFin = horaFin * 60 + minutoFin;
