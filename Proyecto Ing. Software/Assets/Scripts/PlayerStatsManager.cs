@@ -194,6 +194,7 @@ public class PlayerStatsManager : MonoBehaviour
     public int Conocimiento => _conocimiento;
     public int Estres => _estres;
     public int Semana => _semana;
+    public int nDia => _dia;
     #endregion
 
     /// <summary>
