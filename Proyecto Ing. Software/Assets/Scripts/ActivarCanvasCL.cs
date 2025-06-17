@@ -6,11 +6,14 @@ public class ActivarCanvasCL : MonoBehaviour
     public GameObject canvasGame;
     public GameObject canvasNotas;
     public List<int> SemanasExamenes = new List<int>();
+    public List<int> DiasExamenes = new List<int>();
+    public List<(int semana, int dia)> fechas = new List<(int, int)>();
 
     [Header("Canvas HUD")]
     public GameObject HUDCanvas;
     private bool jugadorDentro = false;
     public PlayerController playerController;
+    public CardsController cardsController;
     
     // Referencia al HUDController para mostrar mensajes
     private HUDController hudController;
@@ -24,8 +27,17 @@ public class ActivarCanvasCL : MonoBehaviour
     [Range(0, 59)] public int minutoFin = 0;
 
     [Header("Días Permitidos")]
-    [Tooltip("Días de la semana permitidos (ejemplo: Lunes, Martes, etc.)")]
+    [Tooltip("Días de la semana permitidos")]
     public List<string> diasPermitidos = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+
+    void Awake()
+    {
+        int count = Mathf.Min(SemanasExamenes.Count, DiasExamenes.Count);
+        for (int i = 0; i < count; i++)
+        {
+            fechas.Add((SemanasExamenes[i], DiasExamenes[i]));
+        }
+    }
 
     private void Start()
     {
@@ -58,6 +70,9 @@ public class ActivarCanvasCL : MonoBehaviour
     {
         if (PlayerStatsManager.Instance == null) return;
 
+        int semanaActual = PlayerStatsManager.Instance.Semana;
+        int diaActual = PlayerStatsManager.Instance.nDia;
+
         // Mostrar mensaje general cuando el jugador está dentro
         if (jugadorDentro)
         {
@@ -70,6 +85,12 @@ public class ActivarCanvasCL : MonoBehaviour
                 else
                 {
                     hudController.MostrarMensaje("No es el día u hora adecuada para estudiar");
+                    
+                // Llama al método de CardsController para cerrar el minijuego correctamente
+                if (cardsController != null)
+                {
+                    cardsController.OnExitButtonPressed();
+                }
                 }
             }
         }
@@ -104,8 +125,13 @@ public class ActivarCanvasCL : MonoBehaviour
 
             if (canvasGame == null && canvasNotas == null) return;
 
-            if (SemanasExamenes.Contains(PlayerStatsManager.Instance.Semana))
+            if (fechas.Contains((semanaActual, diaActual)))
             {
+                // Si es semana de examen, activar el canvas de notas
+                if (hudController != null)
+                {
+                    hudController.MostrarMensaje("¡Semana de exámenes! Accediendo a las notas...", 2f);
+                }
                 // Si la semana actual está en la lista de semanas de exámenes, activar el canvas de notas
                 canvasNotas.SetActive(true);
                 if (playerController != null) playerController.enabled = false;
@@ -113,6 +139,10 @@ public class ActivarCanvasCL : MonoBehaviour
             else
             {
                 // Si no es semana de examen, activar el canvas de estudio
+                if (hudController != null)
+                {
+                    hudController.MostrarMensaje("Accediendo al estudio...", 2f);
+                }
                 bool canvasActivo = !canvasGame.activeSelf;
                 canvasGame.SetActive(canvasActivo);
                 if (playerController != null) playerController.enabled = !canvasActivo;
