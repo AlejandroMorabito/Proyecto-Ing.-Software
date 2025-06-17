@@ -13,6 +13,7 @@ public class ActivarCanvasCL : MonoBehaviour
     public GameObject HUDCanvas;
     private bool jugadorDentro = false;
     public PlayerController playerController;
+    public CardsController cardsController;
     
     // Referencia al HUDController para mostrar mensajes
     private HUDController hudController;
@@ -26,7 +27,7 @@ public class ActivarCanvasCL : MonoBehaviour
     [Range(0, 59)] public int minutoFin = 0;
 
     [Header("Días Permitidos")]
-    [Tooltip("Días de la semana permitidos (ejemplo: Lunes, Martes, etc.)")]
+    [Tooltip("Días de la semana permitidos")]
     public List<string> diasPermitidos = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
 
     void Awake()
@@ -84,6 +85,12 @@ public class ActivarCanvasCL : MonoBehaviour
                 else
                 {
                     hudController.MostrarMensaje("No es el día u hora adecuada para estudiar");
+                    
+                // Llama al método de CardsController para cerrar el minijuego correctamente
+                if (cardsController != null)
+                {
+                    cardsController.OnExitButtonPressed();
+                }
                 }
             }
         }
