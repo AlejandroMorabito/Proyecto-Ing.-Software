@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BasketManager : MonoBehaviour
 {
@@ -23,9 +24,10 @@ public class BasketManager : MonoBehaviour
     {
         if (PlayerStatsManager.Instance != null)
         {
-            PlayerStatsManager.Instance.AddEstres(score);
-            Debug.Log("Estres agregado: " + score);
+            PlayerStatsManager.Instance.AddEstres(-score);
+            Debug.Log("Estres agregado: -" + score);
         }
+        SceneManager.LoadScene("Barra");
     }
 
     private void UpdateScoreText()
