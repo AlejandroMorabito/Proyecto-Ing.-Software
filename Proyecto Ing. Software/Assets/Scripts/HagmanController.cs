@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class HagmanController : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class HagmanController : MonoBehaviour
 
     public void InitializeButtons()
     {
-        
+
         for (int i = 65; i <= 90; i++)
         {
             CreateButton(i);
@@ -39,7 +38,7 @@ public class HagmanController : MonoBehaviour
         incorrectGuesses = 0;
         correctGuesses = 0;
 
-        foreach(Button child in keyboardContainer.GetComponentsInChildren<Button>())
+        foreach (Button child in keyboardContainer.GetComponentsInChildren<Button>())
         {
             child.interactable = true;
         }
@@ -56,7 +55,7 @@ public class HagmanController : MonoBehaviour
 
         // generate new word
         word = generateWord().ToUpper();
-        foreach(char letter in word)
+        foreach (char letter in word)
         {
             var temp = Instantiate(letterContainer, wordContainer.transform);
         }
@@ -91,12 +90,16 @@ public class HagmanController : MonoBehaviour
                 letterInWord = true;
                 correctGuesses++;
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = inputLetter;
-                wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.green;
+                
+
+
             }
+            
+
 
         }
 
-        if (!letterInWord)
+        if (letterInWord == false)
         {
             incorrectGuesses++;
             hangmanStages[incorrectGuesses - 1].SetActive(true);
@@ -106,11 +109,13 @@ public class HagmanController : MonoBehaviour
 
     private void CheckOutcome()
     {
-        if (incorrectGuesses == word.Length) // win
+        if (correctGuesses == word.Length) // win
         {
             for (int i = 0; i < word.Length; i++)
             {
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.green;
+
+
             }
             Invoke("InitializeGame", 3f);
         }
@@ -124,16 +129,6 @@ public class HagmanController : MonoBehaviour
             }
             Invoke("InitializeGame", 3f);
 
-        }
-
-        if (incorrectGuesses == hangmanStages.Length) // pierde
-        { 
-            SceneManager.LoadScene("GameOverScene");
-        } 
-
-        if (correctGuesses == word.Length) // gana
-        { 
-            SceneManager.LoadScene("WinScene");
         }
     }
 }
