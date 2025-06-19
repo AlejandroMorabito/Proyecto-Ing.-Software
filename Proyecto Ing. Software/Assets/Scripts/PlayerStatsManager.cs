@@ -97,7 +97,6 @@ public class PlayerStatsManager : MonoBehaviour
     {
         _horaActual = _horaActual.AddMinutes(minutos);
         OnHoraCambiada?.Invoke(GetHoraFormateada()); // Notifica el cambio de hora
-        Debug.Log("Hora actual: " + GetHoraFormateada());
     }
 
     /// <summary>
@@ -188,6 +187,16 @@ public class PlayerStatsManager : MonoBehaviour
     {
         _estres = Mathf.Clamp(valor, 0, 100);
         OnEstresChanged?.Invoke(_estres);
+    }
+
+    public void SetDia(int dia)
+    {
+        _dia = dia;
+    }
+
+    public void SetSemana(int semana)
+    {
+        _semana = semana;
     }
 
     // Propiedades para acceder a las estadísticas

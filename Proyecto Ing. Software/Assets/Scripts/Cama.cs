@@ -8,6 +8,7 @@ public class Cama : MonoBehaviour
     public Image blinkImage; // Asigna una imagen negra con alpha 0 en el Canvas
     public float blinkDuration = 0.2f;
     public HUDController hudController;
+    public Guardado guardado; // <-- Asigna este campo manualmente en el Inspector
 
     private void Start()
     {
@@ -53,6 +54,16 @@ public class Cama : MonoBehaviour
             StartCoroutine(Blink());
             PlayerStatsManager.Instance.AvanzarDia(1);
             PlayerStatsManager.Instance.ReiniciarReloj();
+
+            // Llama a Guardar solo si está asignado en el inspector
+            if (guardado != null)
+            {
+                guardado.Guardar();
+            }
+            else
+            {
+                Debug.LogWarning("No se ha asignado el objeto Guardado en el Inspector.");
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,13 +87,34 @@ public class Cama : MonoBehaviour
         if (blinkImage == null)
         {
             Debug.LogError("blinkImage no asignada. Asegúrate de asignar una imagen en el inspector.");
-            yield break; // Salir si no hay imagen asignada
+            yield break;
         }
-        blinkImage.gameObject.SetActive(true); // Asegúrate de que la imagen está activa
-        // Aparece la imagen (pantalla negra)
+
+        blinkImage.gameObject.SetActive(true);
+
+        float fadeDuration = 0.8f; // Duración del fade in y fade out (en segundos)
+        float holdDuration = 0.8f; // Tiempo que permanece completamente negro
+
+        // Fade in (transparente a negro)
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float alpha = Mathf.Lerp(0, 1, t / fadeDuration);
+            blinkImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
         blinkImage.color = new Color(0, 0, 0, 1);
-        yield return new WaitForSeconds(blinkDuration);
-        // Desaparece la imagen (pantalla normal)
+
+        // Mantener pantalla negra
+        yield return new WaitForSeconds(holdDuration);
+
+        // Fade out (negro a transparente)
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float alpha = Mathf.Lerp(1, 0, t / fadeDuration);
+            blinkImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
         blinkImage.color = new Color(0, 0, 0, 0);
+        blinkImage.gameObject.SetActive(false);
     }
 }
