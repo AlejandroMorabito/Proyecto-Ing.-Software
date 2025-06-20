@@ -3,14 +3,9 @@ saman
 unimet
 metro
 metropolitana
-mongodb
-formulasae
-postgresql
-mysql
 simio
 scrum
 cetic
-gptic
 canva
 spark
 lingo
@@ -21,8 +16,6 @@ powerpoint
 react
 netbeans
 database
-bddi
-bddii
 ingenieria
 sistemas
 software
@@ -34,10 +27,10 @@ introduccion
 matematicas
 pensamiento
 computacional
-inglesiv
+ingles
 competencias
 aprender
-elemg
+emg
 mendoza
 celaup
 labarra
@@ -53,8 +46,6 @@ discretas
 algebra
 lineal
 datos
-sql
-nosql
 interfaz
 usuario
 estudiante
@@ -72,4 +63,3 @@ organizacion
 minijuegos
 estres
 proyecto
-mvp
