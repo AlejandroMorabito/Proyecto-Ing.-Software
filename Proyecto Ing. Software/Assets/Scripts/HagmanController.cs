@@ -9,7 +9,7 @@ public class HagmanController : MonoBehaviour
     [SerializeField] GameObject wordContainer;
     [SerializeField] GameObject keyboardContainer;
     [SerializeField] GameObject letterContainer;
-    [SerializeField] GameObject[] hagmanStages;
+    [SerializeField] GameObject[] hangmanStages;
     [SerializeField] GameObject letterButton;
     [SerializeField] TextAsset possibleWord;
 
@@ -18,17 +18,50 @@ public class HagmanController : MonoBehaviour
 
     void Start()
     {
-        // Puedes inicializar aquí si lo necesitas
+        InitializeButtons();
+        InitializeGame();
     }
 
-    public void InitialiseButtons()
+    public void InitializeButtons()
     {
-        // Corrección: Usar '=' en vez de '-' y '<=' para incluir la Z (ASCII 90)
+
         for (int i = 65; i <= 90; i++)
         {
             CreateButton(i);
         }
     }
+
+
+    public void InitializeGame()
+    {
+        // reset data back to original state
+        incorrectGuesses = 0;
+        correctGuesses = 0;
+
+        foreach (Button child in keyboardContainer.GetComponentsInChildren<Button>())
+        {
+            child.interactable = true;
+        }
+
+        foreach (Transform child in wordContainer.GetComponentInChildren<Transform>())
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (GameObject stage in hangmanStages)
+        {
+            stage.SetActive(false);
+        }
+
+        // generate new word
+        word = generateWord().ToUpper();
+        foreach (char letter in word)
+        {
+            var temp = Instantiate(letterContainer, wordContainer.transform);
+        }
+
+    }
+
 
     public void CreateButton(int i)
     {
@@ -37,9 +70,65 @@ public class HagmanController : MonoBehaviour
         temp.GetComponent<Button>().onClick.AddListener(delegate { CheckLetter(((char)i).ToString()); });
     }
 
-    // Asegúrate de tener este método implementado en tu clase
-    public void CheckLetter(string letter)
+    private string generateWord()
+    {
+        string[] wordList = possibleWord.text.Split("\n");
+        string line = wordList[Random.Range(0, wordList.Length - 1)];
+        return line.Substring(0, line.Length - 1);
+
+    }
+
+
+    public void CheckLetter(string inputLetter)
     {
         // Lógica para comprobar la letra
+        bool letterInWord = false;
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (inputLetter == word[i].ToString())
+            {
+                letterInWord = true;
+                correctGuesses++;
+                wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = inputLetter;
+                
+
+
+            }
+            
+
+
+        }
+
+        if (letterInWord == false)
+        {
+            incorrectGuesses++;
+            hangmanStages[incorrectGuesses - 1].SetActive(true);
+        }
+        CheckOutcome();
+    }
+
+    private void CheckOutcome()
+    {
+        if (correctGuesses == word.Length) // win
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.green;
+
+
+            }
+            Invoke("InitializeGame", 3f);
+        }
+
+        if (incorrectGuesses == hangmanStages.Length) // lose
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.red;
+                wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = word[i].ToString();
+            }
+            Invoke("InitializeGame", 3f);
+
+        }
     }
 }
