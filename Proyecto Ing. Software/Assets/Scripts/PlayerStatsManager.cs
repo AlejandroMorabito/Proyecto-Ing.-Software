@@ -255,4 +255,10 @@ public class PlayerStatsManager : MonoBehaviour
         _relojPausado = false;
         Debug.Log("¡Reloj iniciado por botón!");
     }
+
+    public void AgregarTiempo(int horas, int minutos)
+    {
+        _horaActual = _horaActual.AddHours(horas).AddMinutes(minutos);
+        OnHoraCambiada?.Invoke(GetHoraFormateada());
+    }
 }

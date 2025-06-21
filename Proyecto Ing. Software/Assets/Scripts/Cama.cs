@@ -54,6 +54,9 @@ public class Cama : MonoBehaviour
             StartCoroutine(Blink());
             PlayerStatsManager.Instance.AvanzarDia(1);
             PlayerStatsManager.Instance.ReiniciarReloj();
+            PlayerStatsManager.Instance.AddConocimiento(-1);
+            PlayerStatsManager.Instance.AddEstres(-1);
+
 
             // Llama a Guardar solo si está asignado en el inspector
             if (guardado != null)

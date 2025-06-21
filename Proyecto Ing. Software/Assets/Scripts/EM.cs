@@ -10,7 +10,7 @@ public class EM : MonoBehaviour
         if (jugadorDentro)
         {
             if (hudController != null)
-                hudController.MostrarMensaje("Presiona E");
+                hudController.MostrarMensaje("Presiona E para tocarle las nalgas Romulo");
 
             if (Input.GetKeyDown(KeyCode.E))
             {
