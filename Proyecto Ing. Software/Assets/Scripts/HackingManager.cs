@@ -56,7 +56,7 @@ public class HackingManager : MonoBehaviour
     {
         startButton.SetActive(true);
         startButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(StartGameFromButton);
-    exitButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnExitButtonPressed);
+        exitButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnExitButtonPressed);
         InitializeGrid();
         GenerateTargetSequence();
         HideGrid();

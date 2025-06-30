@@ -90,11 +90,11 @@ public class HagmanController : MonoBehaviour
                 letterInWord = true;
                 correctGuesses++;
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = inputLetter;
-                
+
 
 
             }
-            
+
 
 
         }
@@ -114,9 +114,9 @@ public class HagmanController : MonoBehaviour
             for (int i = 0; i < word.Length; i++)
             {
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.green;
-
-
             }
+            PlayerStatsManager.Instance.AddConocimiento(+2);
+            PlayerStatsManager.Instance.AddEstres(+1);
             Invoke("InitializeGame", 3f);
         }
 
@@ -127,8 +127,14 @@ public class HagmanController : MonoBehaviour
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].color = Color.red;
                 wordContainer.GetComponentsInChildren<TextMeshProUGUI>()[i].text = word[i].ToString();
             }
+            PlayerStatsManager.Instance.AddConocimiento(-1);
+            PlayerStatsManager.Instance.AddEstres(+2);
             Invoke("InitializeGame", 3f);
 
         }
+    }
+    public void OnExitButtonPressed()
+    {
+        gameObject.SetActive(false);
     }
 }

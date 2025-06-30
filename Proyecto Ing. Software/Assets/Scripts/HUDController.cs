@@ -137,14 +137,13 @@ public class HUDController : MonoBehaviour
 
         if (diaActual == "Lunes" && 
             ((horaActual == 8 && minutosActuales >= 45) ||
-             (horaActual == 9) ||
              (horaActual == 10 && minutosActuales == 15)))
         {
             return "Competencias para Aprender\nA1-204";
         }
         else if (diaActual == "Lunes" && 
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 1 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales == 45)))
         {
             return "Ingles IV\nA1-201";
         }
@@ -161,21 +160,20 @@ public class HUDController : MonoBehaviour
             return "Introducción a la Ingenieria\nA1-202";
         }
         else if (diaActual == "Martes" && 
-            ((horaActual == 2 && minutosActuales >= 00) ||
-             (horaActual == 3 && minutosActuales == 30)))
+            ((horaActual == 14 && minutosActuales >= 00) ||
+             (horaActual == 15 && minutosActuales == 30)))
         {
             return "Pensamiento Computacional\nA1-203";
         }
         else if (diaActual == "Miercoles" && 
             ((horaActual == 8 && minutosActuales >= 45) ||
-             (horaActual == 9) ||
              (horaActual == 10 && minutosActuales == 15)))
         {
             return "Competencias para Aprender\nA1-204";
         }
         else if (diaActual == "Miercoles" && 
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 1 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales == 45)))
         {
             return "Ingles IV\nA1-201";
         }
@@ -187,13 +185,13 @@ public class HUDController : MonoBehaviour
         }
         else if (diaActual == "Jueves" && 
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 1 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales == 45)))
         {
             return "Introducción a la Ingenieria\nA1-202";
         }
         else if (diaActual == "Jueves" && 
-            ((horaActual == 2 && minutosActuales >= 00) ||
-             (horaActual == 3 && minutosActuales == 30)))
+            ((horaActual == 14 && minutosActuales >= 00) ||
+             (horaActual == 15 && minutosActuales == 30)))
         {
             return "Pensamiento Computacional\nA1-203";
         }
