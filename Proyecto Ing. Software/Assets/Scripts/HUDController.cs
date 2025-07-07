@@ -146,7 +146,7 @@ public class HUDController : MonoBehaviour
 
         if (diaActual == "Lunes" &&
             ((horaActual == 8 && minutosActuales >= 45) ||
-             (horaActual == 9 && minutosActuales >= 15) ||
+             (horaActual == 9 && minutosActuales >= 00) ||
              (horaActual == 10 && minutosActuales <= 15)))
         {
             info.clase = "Competencias para Aprender";

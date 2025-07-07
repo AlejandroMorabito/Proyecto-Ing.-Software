@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 
 /// <summary>
 /// Administra las estadísticas del jugador y el sistema de reloj.
@@ -26,6 +27,7 @@ public class PlayerStatsManager : MonoBehaviour
     public delegate void StatChanged(int valor);
     public static event StatChanged OnConocimientoChanged;
     public static event StatChanged OnEstresChanged;
+    
 
     /// <summary>
     /// Inicializa el Singleton y configura el objeto para que no se destruya al cambiar de escena.
