@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class MenuPausa : MonoBehaviour
     public GameObject calendarioCanvas;
     public GameObject horarioCanvas;
     public GameObject cronogramaCanvas; 
-    public PlayerController playerController; // Referencia a tu script de control del jugador
+    public PlayerController playerController;
     public Button botonReanudar;
     public Button botonCronograma;
     public Button botonGuardar;
     public Button botonSalir;
+
+    [Header("Canvas Adicionales")]
+    public List<GameObject> canvasAdicionales = new List<GameObject>(); // Lista de canvas que se deben cerrar al pausar
 
     private bool juegoPausado = false;
 
@@ -43,15 +47,65 @@ public class MenuPausa : MonoBehaviour
             }
             else
             {
-                PausarJuego();
+                // Verificar si hay algún canvas adicional abierto
+                bool algunCanvasAbierto = VerificarCanvasAbiertos();
+
+                if (algunCanvasAbierto)
+                {
+                    CerrarTodosLosCanvas();
+                }
+                else
+                {
+                    PausarJuego();
+                }
             }
+        }
+    }
+
+    bool VerificarCanvasAbiertos()
+    {
+        // Verificar canvas predefinidos
+        if (calendarioCanvas.activeSelf || horarioCanvas.activeSelf || cronogramaCanvas.activeSelf)
+            return true;
+
+        // Verificar canvas adicionales de la lista
+        foreach (GameObject canvas in canvasAdicionales)
+        {
+            if (canvas != null && canvas.activeSelf)
+                return true;
+        }
+
+        return false;
+    }
+
+    void CerrarTodosLosCanvas()
+    {
+        // Cerrar canvas predefinidos
+        calendarioCanvas.SetActive(false);
+        horarioCanvas.SetActive(false);
+        cronogramaCanvas.SetActive(false);
+
+        // Cerrar canvas adicionales
+        foreach (GameObject canvas in canvasAdicionales)
+        {
+            if (canvas != null)
+                canvas.SetActive(false);
+        }
+
+        // Reactivar controles del jugador si no estamos en pausa
+        if (!juegoPausado && playerController != null)
+        {
+            playerController.enabled = true;
         }
     }
 
     void PausarJuego()
     {
         juegoPausado = true;
-        Time.timeScale = 0f; // Pausar el tiempo del juego
+        Time.timeScale = 0f;
+        
+        // Asegurarse que todos los canvas están cerrados
+        CerrarTodosLosCanvas();
         
         // Mostrar menú de pausa
         menuPausaCanvas.SetActive(true);
@@ -62,7 +116,7 @@ public class MenuPausa : MonoBehaviour
             playerController.enabled = false;
         }
         
-        // Opcional: Bloquear y mostrar el cursor
+        // Mostrar cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -70,7 +124,7 @@ public class MenuPausa : MonoBehaviour
     void ReanudarJuego()
     {
         juegoPausado = false;
-        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        Time.timeScale = 1f;
         
         // Ocultar menú de pausa
         menuPausaCanvas.SetActive(false);
@@ -91,7 +145,7 @@ public class MenuPausa : MonoBehaviour
     void GuardarPartida()
     {
         Debug.Log("Guardar partida presionado (función no implementada)");
-        // Aquí puedes implementar el sistema de guardado
+        // Implementar sistema de guardado aquí
     }
 
     void SalirDelJuego()
@@ -99,7 +153,6 @@ public class MenuPausa : MonoBehaviour
         Debug.Log("Saliendo del juego...");
         Application.Quit();
         
-        // Si estás en el editor de Unity
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif

@@ -22,7 +22,6 @@ software
 python
 java
 optimizacion
-mundox
 introduccion
 matematicas
 pensamiento
@@ -33,10 +32,10 @@ aprender
 emg
 mendoza
 celaup
-labarra
-laferia
+barra
+feria
 algoritmos
-latiendita
+tiendita
 unity
 metaverso
 operativos

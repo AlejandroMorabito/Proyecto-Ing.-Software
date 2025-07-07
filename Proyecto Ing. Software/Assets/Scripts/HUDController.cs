@@ -2,6 +2,13 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
+[System.Serializable]
+public struct ClaseInfo
+{
+    public string clase;
+    public string Salon;
+}
+
 public class HUDController : MonoBehaviour
 {
     [Header("Textos de Estadísticas")]
@@ -83,7 +90,8 @@ public class HUDController : MonoBehaviour
     {
         if (textoHora != null)
         {
-            textoHora.text = $"{PlayerStatsManager.Instance.NombrePJ}\n\nSemana {PlayerStatsManager.Instance.Semana}\n{PlayerStatsManager.Instance.ObtenerDiaSemana()}\n{hora}\n{MostrarMensajeSiEnHorarioYDia()}";
+            ClaseInfo claseInfo = MostrarMensajeSiEnHorarioYDia();
+            textoHora.text = $"{PlayerStatsManager.Instance.NombrePJ}\n\nSemana {PlayerStatsManager.Instance.Semana}\n{PlayerStatsManager.Instance.ObtenerDiaSemana()}\n{hora}\n{claseInfo.clase}\n{claseInfo.Salon}";
         }
         else
         {
@@ -128,80 +136,93 @@ public class HUDController : MonoBehaviour
         }
     }
 
-    public string MostrarMensajeSiEnHorarioYDia()
+    public ClaseInfo MostrarMensajeSiEnHorarioYDia()
     {
-        if (PlayerStatsManager.Instance == null) return "";
+        ClaseInfo info = new ClaseInfo();
+        if (PlayerStatsManager.Instance == null) return info;
 
         string diaActual = PlayerStatsManager.Instance.ObtenerDiaSemana();
         (int horaActual, int minutosActuales) = PlayerStatsManager.Instance.GetHoraYMinutosActual();
 
-        if (diaActual == "Lunes" && 
+        if (diaActual == "Lunes" &&
             ((horaActual == 8 && minutosActuales >= 45) ||
-             (horaActual == 10 && minutosActuales == 15)))
+             (horaActual == 9 && minutosActuales >= 15) ||
+             (horaActual == 10 && minutosActuales <= 15)))
         {
-            return "Competencias para Aprender\nA1-204";
+            info.clase = "Competencias para Aprender";
+            info.Salon = "A1-204";
         }
-        else if (diaActual == "Lunes" && 
+        else if (diaActual == "Lunes" &&
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 13 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales <= 45)))
         {
-            return "Ingles IV\nA1-201";
+            info.clase = "Ingles IV";
+            info.Salon = "A1-201";
         }
-        else if (diaActual == "Martes" && 
+        else if (diaActual == "Martes" &&
             ((horaActual == 7 && minutosActuales >= 00) ||
-             (horaActual == 8 && minutosActuales == 30)))
+             (horaActual == 8 && minutosActuales <= 30)))
         {
-            return "Matematicas Basica\nA2-204";
+            info.clase = "Matematicas Basica";
+            info.Salon = "A2-204";
         }
-        else if (diaActual == "Martes" && 
+        else if (diaActual == "Martes" &&
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 1 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales <= 45)))
         {
-            return "Introducción a la Ingenieria\nA1-202";
+            info.clase = "Introducción a la Ingenieria";
+            info.Salon = "A1-202";
         }
-        else if (diaActual == "Martes" && 
+        else if (diaActual == "Martes" &&
             ((horaActual == 14 && minutosActuales >= 00) ||
-             (horaActual == 15 && minutosActuales == 30)))
+             (horaActual == 15 && minutosActuales <= 30)))
         {
-            return "Pensamiento Computacional\nA1-203";
+            info.clase = "Pensamiento Computacional";
+            info.Salon = "A1-203";
         }
-        else if (diaActual == "Miercoles" && 
+        else if (diaActual == "Miércoles" &&
             ((horaActual == 8 && minutosActuales >= 45) ||
-             (horaActual == 10 && minutosActuales == 15)))
+             (horaActual == 9 && minutosActuales >= 00) ||
+             (horaActual == 10 && minutosActuales <= 15)))
         {
-            return "Competencias para Aprender\nA1-204";
+            info.clase = "Competencias para Aprender";
+            info.Salon = "A1-204";
         }
-        else if (diaActual == "Miercoles" && 
+        else if (diaActual == "Miércoles" &&
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 13 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales <= 45)))
         {
-            return "Ingles IV\nA1-201";
+            info.clase = "Ingles IV";
+            info.Salon = "A1-201";
         }
-        else if (diaActual == "Jueves" && 
+        else if (diaActual == "Jueves" &&
             ((horaActual == 7 && minutosActuales >= 00) ||
-             (horaActual == 8 && minutosActuales == 30)))
+             (horaActual == 8 && minutosActuales <= 30)))
         {
-            return "Matematicas Basica\nA2-204";
+            info.clase = "Matematicas Basica";
+            info.Salon = "A2-204";
         }
-        else if (diaActual == "Jueves" && 
+        else if (diaActual == "Jueves" &&
             ((horaActual == 12 && minutosActuales >= 15) ||
-             (horaActual == 13 && minutosActuales == 45)))
+             (horaActual == 13 && minutosActuales <= 45)))
         {
-            return "Introducción a la Ingenieria\nA1-202";
+            info.clase = "Introducción a la Ingenieria";
+            info.Salon = "A1-202";
         }
-        else if (diaActual == "Jueves" && 
+        else if (diaActual == "Jueves" &&
             ((horaActual == 14 && minutosActuales >= 00) ||
-             (horaActual == 15 && minutosActuales == 30)))
+             (horaActual == 15 && minutosActuales <= 30)))
         {
-            return "Pensamiento Computacional\nA1-203";
+            info.clase = "Pensamiento Computacional";
+            info.Salon = "A1-203";
         }
-        else if (diaActual == "Viernes" && 
+        else if (diaActual == "Viernes" &&
             ((horaActual == 7 && minutosActuales >= 00) ||
-             (horaActual == 8 && minutosActuales == 30)))
+             (horaActual == 8 && minutosActuales <= 30)))
         {
-            return "Matematicas Basica\nA2-204";
+            info.clase = "Matematicas Basica";
+            info.Salon = "A2-204";
         }
-
-        return "Clase\nSalon";
+        return info;
     }
 }
